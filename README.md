@@ -24,7 +24,7 @@ print("einen Text")
 ```
 Will man einen Kommentar über mehrere Zeilen schreiben, dann verfasst man ihn so:
 ```py
-""" dies ist ein Blockkommentar
+""" dies ist ein Blockkommentar,
     welcher sich über mehrere Zeilen erstreckt."""
 ```
 Genau genommen wird mit dieser Notation kein Kommentar, sondern ein mehrzeiliger String erzeugt
