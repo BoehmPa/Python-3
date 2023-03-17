@@ -85,15 +85,70 @@ Der Vorgang erfolgt folgendermaßen:
 <a name="grundlegende-datentypen"></a>
 
 ### Grundlegende Datentypen
+Ein kurzer Überblick über die grundlegenden Datentypen. Im weiteren Verlauf werden diese genauer erklärt.
+<br>
+<br>
 
+- ### Ganze Zahlen (integer)
 
+<br>
 
-
-### Python in der Shell
 ```py
-> python datei.py
+> 9
+> -9
+> 1133
+> 12
 ```
-Eine Beispiel-Datei befindet sich unter Basics/Python in der Shell/"**py_in_shell.py**"
+#### Rechenoperationen:
+
+<br>
+
+```py
+> 9 + 9
+> 18
+
+> 17 - 4
+> 13
+
+> 16 / 8
+> 2
+
+> 5 * 12
+> 60
+
+> (21 - 3) * 9 + 6
+> 168
+```
+<br>
+<br>
+
+- ### Gleitkommazahlen (float)
+
+<br>
+
+```py
+> 0.5
+> -123.456
+> +0.4578930723894579275
+```
+#### Rechenoperationen
+
+<br>
+
+```py
+> 1.3 + 1.8
+> 3.1
+
+> 12.9 - 7.4
+> 5.5
+
+> 1.5 / 2.1
+> 0.712857142857143
+
+> 123.748593 * 1.24
+> 153.44825532
+```
+
 
 <br>
 
