@@ -86,6 +86,7 @@ Der Vorgang erfolgt folgendermaßen:
 
 ### Grundlegende Datentypen
 Ein kurzer Überblick über die grundlegenden Datentypen. Im weiteren Verlauf werden diese genauer erklärt.
+Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` eingeben) oder [diese Datei](Basics/Grunddatentypen/grunddatentypen.py) (enthält die vollständigen Befehle inklusive `print()`) genutzt werden.
 <br>
 <br>
 
@@ -99,25 +100,25 @@ Ein kurzer Überblick über die grundlegenden Datentypen. Im weiteren Verlauf we
 > 1133
 > 12
 ```
-#### Rechenoperationen:
-
 <br>
+
+#### Rechenoperationen:
 
 ```py
 > 9 + 9
-> 18
+>>> 18
 
 > 17 - 4
-> 13
+>>> 13
 
 > 16 / 8
-> 2
+>>> 2
 
 > 5 * 12
-> 60
+>>> 60
 
 > (21 - 3) * 9 + 6
-> 168
+>>> 168
 ```
 <br>
 <br>
@@ -131,26 +132,110 @@ Ein kurzer Überblick über die grundlegenden Datentypen. Im weiteren Verlauf we
 > -123.456
 > +0.4578930723894579275
 ```
+<br>
+
 #### Rechenoperationen
+
+```py
+> 1.3 + 1.8
+>>> 3.1
+
+> 12.9 - 7.4
+>>> 5.5
+
+> 1.5 / 2.1
+>>> 0.712857142857143
+
+> 123.748593 * 1.24
+>>> 153.44825532
+```
+<br>
+<br>
+
+- ### Zeichenketten (strings)
 
 <br>
 
 ```py
-> 1.3 + 1.8
-> 3.1
+> "Hallo Welt"
+>>> Hallo Welt
 
-> 12.9 - 7.4
-> 5.5
+> 'Hallo Welt'
+>>> Hallo Welt
 
-> 1.5 / 2.1
-> 0.712857142857143
+> "Ich sage 'Hallo Welt!'"
+>>> Ich sage 'Hallo Welt!'
 
-> 123.748593 * 1.24
-> 153.44825532
+> 'Ich sage "Hallo Welt!"'
+>>> Ich sage "Hallo Welt!"
+```
+<br>
+
+#### Operationen
+
+```py
+> "Hallo" + " " + "Welt"
+>>> Hallo Welt
+```
+<br>
+<br>
+
+- ### Listen (list)
+<br>
+
+```py
+> [1,2,3]
+>>> [1, 2, 3]
+
+> ["Python", 3, "ist super", "im Jahr", 2023]
+>>> ['Python', 3, 'ist super', 'im Jahr', 2023]
+
+> ["Hallo", 2, 3, -7 / 4, [1,2,3]]
+>>> ['Hallo', 2, 3, -1.75, [1, 2, 3]]
+```
+<br>
+
+#### Operationen
+
+```py
+> [1,2,3] + ["Python", "ist", "super!"]
+>>> [1, 2, 3, 'Python', 'ist', 'super!']
 ```
 
+<br>
+<br>
+
+- ### Wörterbuch (dictionary)
+<br>
+
+```py
+> d = {"schlüssel1" : "wert1", "schlüssel2" : "wert2"}
+```
+<br>
+
+#### Zugriff auf Werte
+
+```py
+> d["schlüssel1"]
+>>> 'wert1'
+
+> d["schlüssel2"]
+>>> 'wert2'
+```
 
 <br>
+
+#### Modifikation
+
+```py
+> d["schlüssel2"] = "wert2.1"
+> d["schlüssel2"]
+>>> 'wert2'
+
+> d["schlüssel3"] = "wert3"
+> d["schlüssel3"]
+>>> 'wert3'
+```
 
 ### Ausgabe
 in Python wird eine Ausgabe mit dem `print`-Befehl ausgeführt.
