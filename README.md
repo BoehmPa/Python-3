@@ -28,7 +28,10 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
 
 
 
-
+<br>
+<br>
+<br>
+<br>
 
 <a name="einführung"></a>
 
@@ -417,6 +420,5 @@ Einige Anweisungen lassen sich in einen Anweisungskopf und in einen Anweisungsk�
 
 ## Kontrollstruktur
 
+
 <br>
-
-
