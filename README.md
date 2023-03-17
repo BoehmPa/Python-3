@@ -20,6 +20,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Module](#module)
     - [Grundstruktur](#grundstruktur)
 - [Kontrollstruktur](#kontrollstruktur)
+
   
 
 
