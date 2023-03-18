@@ -432,7 +432,7 @@ Unter einer _Kontrollstruktur_ versteht man ein Konstrukt zur Steuerung des Prog
 
 ### Fallunterscheidungen
 
-Fallunterscheidungen verknüpfen einen Code-Block an eine Bedingung. Man unterscheidet zwei Arten von Fallunterscheidungen: _if-Anweisungen_ und _bedingte Ausdrücke_
+Fallunterscheidungen verknüpfen einen Code-Block an eine Bedingung. Man unterscheidet zwei Arten von Fallunterscheidungen: `if`-Anweisungen und _bedingte Ausdrücke_
 
 <br>
 
@@ -494,7 +494,7 @@ Der `else`-Zweig wird nur ausgeführt, wenn keine der vorangegangen Bedingungen 
 <br>
 
 - ### Bedingte Audrücke
-_Bedingte Audrücke_ ähneln stark den `if`-Anweisungen, werden jedoch in eine einzige Zeile geschrieben._Bedingte Audrücke_ enthalten `if` und `else`.
+_Bedingte Audrücke_ ähneln stark den `if`-Anweisungen, werden jedoch in eine einzige Zeile geschrieben. _Bedingte Audrücke_ enthalten `if` und `else`.
 Eine Beispiel-Datei befindet sich [hier](Kontrollstrukturen/Fallunterscheidungen/bedingte-Ausdr%C3%BCcke.py).
 
 ```py
@@ -509,3 +509,38 @@ Dies verkürzt zwar den Code,allerdings geht das auf Kosten der Lesbarkeit und �
 <a name="Schleifen"></a>
 
 ### Schleifen
+Schleifen ermöglichen es einen Codeblock, den Schleifenkörper, mehrfach hintereinander auszuführen, solange, bis eine bestimmte Bedingung erfüllt ist. In Python gibt es zwei Arten von Schleifen: die `while`-Schleife und die `for`-Schleife.
+
+<br>
+
+- ### While Schleifen
+
+Eine `while`-Schleife besteht asi einem Schleifenkopf, in welchem die Bedingung steht und einem Schleifenkörper, welcher den Codeblock enthält, welcher ausgeführt werden soll. Die `while`-Schleife läuft _solange_ eine Bedingung erfüllt ist und nicht _bis_ diese erfüllt ist. Eine Datei mit Beispielen findest du [hier](Kontrollstrukturen/Schleifen/while-Schleife.py)
+
+```py
+> while Bedingung:
+    Anweisung
+```  
+
+<br>
+
+#### Abbruch einer Schleife
+Eine Schleife kann an einer bestimmten Stelle mit `break` abgebrochen werden. 
+
+```py
+> while Bedingung:
+    Anweisung
+    break
+```
+
+<br>
+
+#### Abbruch eines Schleifendurchlaufs
+Möchte man nur den akutellen Schleifendurchlauf abbrechen, kann dies mit `continue`erreicht werden.
+
+```py
+> while Bedingung
+    Anweisung
+    continue
+```
+Dabei wird nicht die gesamte Schleife abgebrochen, sondern lediglich der aktuelle Durchlauf.
