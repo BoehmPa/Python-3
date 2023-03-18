@@ -20,6 +20,8 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Module](#module)
     - [Grundstruktur](#grundstruktur)
 - [Kontrollstruktur](#kontrollstruktur)
+    - [Fallunterscheidungen](#fallunterscheidungen)
+
 
   
 
@@ -421,5 +423,18 @@ Einige Anweisungen lassen sich in einen Anweisungskopf und in einen Anweisungsk�
 
 ## Kontrollstruktur
 
+Unter einer _Kontrollstruktur_ versteht man ein Konstrukt zur Steuerung des Programmablaufs. In Python unterscheidet man zwei Arten von Kontrollstrukturen: **Schleifen** und **Fallunterscheidungen**. Kontrollstrukturen können beliebig ineinander verschachtelt werden. Die Einrückungstiefe wächst dabei kontinuierlich. 
+
+<br>
+
+<a name="fallunterscheidungen"></a>
+
+### Fallunterscheidungen
+
+Fallunterscheidungen verknüpfen einen Code-Block an eine Bedingung. Man unterscheidet zwei Arten von Fallunterscheidungen: _if-Anweisungen_ und _bedingte Ausdrücke_
+
+<br>
+
+- #### Die if-Anweisung
 
 <br>
