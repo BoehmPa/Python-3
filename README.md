@@ -19,7 +19,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Ausführen eines Python-Scripts in der Shell](#ausführen-eines-python-scripts-in-der-shell)
     - [Module](#module)
     - [Grundstruktur](#grundstruktur)
-- [Kontrollstruktur](#kontrollstruktur)
+- [Kontrollstrukturen](#kontrollstrukturen)
     - [Fallunterscheidungen](#fallunterscheidungen)
 
 
@@ -419,9 +419,9 @@ Einige Anweisungen lassen sich in einen Anweisungskopf und in einen Anweisungsk�
 <br>
 <br>
 
-<a name="kontrollstruktur"></a>
+<a name="kontrollstrukturen"></a>
 
-## Kontrollstruktur
+## Kontrollstrukturen
 
 Unter einer _Kontrollstruktur_ versteht man ein Konstrukt zur Steuerung des Programmablaufs. In Python unterscheidet man zwei Arten von Kontrollstrukturen: **Schleifen** und **Fallunterscheidungen**. Kontrollstrukturen können beliebig ineinander verschachtelt werden. Die Einrückungstiefe wächst dabei kontinuierlich. 
 
@@ -436,5 +436,66 @@ Fallunterscheidungen verknüpfen einen Code-Block an eine Bedingung. Man untersc
 <br>
 
 - #### Die if-Anweisung
+Die einfachste Möglichkeit der Fallunterscheidung ist die `if`-Anweisung. Diese besteht aus einem Anweisungskopf, welcher eine Bedingung enthält, und aus einem Codeblock als Anweisungskörper. Dieser Codeblock wird nur ausgelöst, falls die Bedingung `TRUE` ist. Hierfür werden die logischen Ausdrücke (siehe Operatoren/Vergleiche) benutzt. 
+
+```py
+> if Bedingung:
+    Anweisung
+```
 
 <br>
+
+#### Beispiel:
+
+```py
+> if x == 1:
+    print("x hat den Wert von 1")
+>>> x hat den Wert von 1
+
+> if x < 1 or x > 5:
+    print("x ist kleiner 1")
+    print("oder größer 5)
+```
+
+<br>
+
+Benötigt man mehrere Fallunterscheidungen, kann man nach einem `if` noch beliebig viele `elif` erfolgen.
+
+```py
+> if Bedingung:
+        Anweisung
+  
+  elif Bedingung:
+        Anweisung
+
+  elif Bedingung
+        Anweisung
+```
+
+<br>
+
+Als letzte Möglichkeit kann man auch alle unbehandelten Fälle auf einma abfangen. Dazu kann eine `if`-Anweisung um einen `else`-Zweig erweitert werden. Dieser muss am Ende der `if`-Anweisung geschrieben werden.
+
+```py
+> if Bedingung:
+        Anweisung
+  
+  elif Bedingung:
+        Anweisung
+
+  else Bedingung:
+        Anweisung
+```
+Der `else`-Zweig wird nur ausgeführt, wenn keine der vorangegangen Bedingungen erfüllt wurde. Zu jeder `if`-Anweisung darf nur ein `else`-Zweig gehören.
+
+<br>
+<br>
+
+- ### Bedingte Audrücke
+_Bedingte Audrücke_ ähneln stark den `if`-Anweisungen, werden jedoch in eine einzige Zeile geschrieben._Bedingte Audrücke_ enthalten `if` und `else`.
+
+```py
+> zahl = (20 if x == 1 else 30)
+
+```
+Dies verkürzt zwar den Code,allerdings geht das auf Kosten der Lesbarkeit und Überschaubarkeit.
