@@ -21,6 +21,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Grundstruktur](#grundstruktur)
 - [Kontrollstrukturen](#kontrollstrukturen)
     - [Fallunterscheidungen](#fallunterscheidungen)
+    - [Schleifen](#schleifen)
 
 
   
@@ -436,7 +437,8 @@ Fallunterscheidungen verknüpfen einen Code-Block an eine Bedingung. Man untersc
 <br>
 
 - #### Die if-Anweisung
-Die einfachste Möglichkeit der Fallunterscheidung ist die `if`-Anweisung. Diese besteht aus einem Anweisungskopf, welcher eine Bedingung enthält, und aus einem Codeblock als Anweisungskörper. Dieser Codeblock wird nur ausgelöst, falls die Bedingung `TRUE` ist. Hierfür werden die logischen Ausdrücke (siehe Operatoren/Vergleiche) benutzt. 
+Die einfachste Möglichkeit der Fallunterscheidung ist die `if`-Anweisung. Diese besteht aus einem Anweisungskopf, welcher eine Bedingung enthält, und aus einem Codeblock als Anweisungskörper. Dieser Codeblock wird nur ausgelöst, falls die Bedingung `TRUE` ist. Hierfür werden die logischen Ausdrücke (siehe Operatoren/Vergleiche) benutzt.
+Eine Beispiel-Datei, mit einer kompletten `if`-Anweisung findest du [hier](Kontrollstrukturen/Fallunterscheidungen/if-Anweisungen.py). 
 
 ```py
 > if Bedingung:
@@ -493,9 +495,17 @@ Der `else`-Zweig wird nur ausgeführt, wenn keine der vorangegangen Bedingungen 
 
 - ### Bedingte Audrücke
 _Bedingte Audrücke_ ähneln stark den `if`-Anweisungen, werden jedoch in eine einzige Zeile geschrieben._Bedingte Audrücke_ enthalten `if` und `else`.
+Eine Beispiel-Datei befindet sich [hier](Kontrollstrukturen/Fallunterscheidungen/bedingte-Ausdr%C3%BCcke.py).
 
 ```py
 > zahl = (20 if x == 1 else 30)
 
 ```
 Dies verkürzt zwar den Code,allerdings geht das auf Kosten der Lesbarkeit und Überschaubarkeit.
+
+<br>
+<br>
+
+<a name="Schleifen"></a>
+
+### Schleifen
