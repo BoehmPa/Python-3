@@ -513,7 +513,7 @@ Schleifen ermöglichen es einen Codeblock, den Schleifenkörper, mehrfach hinter
 
 <br>
 
-- ### While Schleifen
+- ### While-Schleifen
 
 Eine `while`-Schleife besteht asi einem Schleifenkopf, in welchem die Bedingung steht und einem Schleifenkörper, welcher den Codeblock enthält, welcher ausgeführt werden soll. Die `while`-Schleife läuft _solange_ eine Bedingung erfüllt ist und nicht _bis_ diese erfüllt ist. Eine Datei mit Beispielen findest du [hier](Kontrollstrukturen/Schleifen/while-Schleife.py)
 
@@ -544,3 +544,14 @@ Möchte man nur den akutellen Schleifendurchlauf abbrechen, kann dies mit `conti
     continue
 ```
 Dabei wird nicht die gesamte Schleife abgebrochen, sondern lediglich der aktuelle Durchlauf.
+
+<br>
+<br>
+
+- ### For-Schleifen
+Die `for`-Schleife wird verwendet, um ein _iterierbares Objekt_ (z.B. Listen oder Strings) zu durchlaufen. Dafür folgt auf `for` ein Bezeichner, das Schlüsselwort `in` und der Name des iterierbaren Objektes. [Beispiel](Kontrollstrukturen/Schleifen/for-Schleife.py)
+
+```py
+> for i in String:
+    Anweisung
+```
