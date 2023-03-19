@@ -22,6 +22,9 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
 - [Kontrollstrukturen](#kontrollstrukturen)
     - [Fallunterscheidungen](#fallunterscheidungen)
     - [Schleifen](#schleifen)
+    - [Die pass-Anweisung](#die-pass-anweisung)
+- [Dateien](#dateien)
+    - [Datenströme](#datenströme)
 
 
   
@@ -552,6 +555,53 @@ Dabei wird nicht die gesamte Schleife abgebrochen, sondern lediglich der aktuell
 Die `for`-Schleife wird verwendet, um ein _iterierbares Objekt_ (z.B. Listen oder Strings) zu durchlaufen. Dafür folgt auf `for` ein Bezeichner, das Schlüsselwort `in` und der Name des iterierbaren Objektes. [Beispiel](Kontrollstrukturen/Schleifen/for-Schleife.py)
 
 ```py
-> for i in String:
+> for element in Objekt:
     Anweisung
 ```
+
+Auch bei der `for`-Schleife funktionieren die Schlüsselwörter `continue`und `break`zum Abbrechen der Schleife bzw. des Schleifendurchlaufs. Zusätzlich kann eine `for`-Schleife über einen `else`-Zweig verfügen, der dann ausgeführt wird, wenn die Schleife vollständig durchgelaufen ist und nicht über `break`vorzeitig abgebrochen wurde.
+
+```py
+> for element in Objekt:
+    Anweisung
+> else:
+    Anweisung
+```
+
+Die `for`-Schleife kann auch als Zählerschleife benutzt werden. Dazu besitzt sie eine eingebaute `range`-Funktion, welche ein Objekt iterierbares Objekt erzeugt, welche alle ganze Zahlen eines bestimmten Bereiches durchläuft. Der erste Wert ist dabei der Startwert und inkludiert, der zweite Wert ist der Stopwert und ist exkludiert, der dritte Wert gibt die Schrittgröße an.
+
+```py
+> for element in range(start, stop, step)
+    Anweisung
+```
+
+<br>
+<br>
+
+<a name="die-pass-anweisung"></a>
+
+### Die pass-Anweisung
+Während der Entwicklung kann es vorkommen, das eine Kontrollstruktur nur teilweise implementiert ist. So kann zum Beispiel nur ein Anweisungskopf erstellt worden sein, ohne Anweisungskörper, da sich um dringendere Teile des Programms gekümmert werden musste. Ein alleinstehender Anweisungskopf ist jedoch ein Syntaxfehler. Aus diesem Grund gibt es die `pass`-Anweisung. Diese hat den Zweck, Syntaxfehler in vorläufigen Programmversionen zu vermeiden. Ein fertiges Programm sollte keine `pass`-Anweisung enthalten. [Beispiel](Kontrollstrukturen/pass-Anweisung.py)
+
+```py
+> Bedingung:
+    pass
+  Bedingung:
+    print(x)
+```
+
+<br>
+<br>
+
+<a name="Dateien"></a>
+
+## Dateien
+Hier geht es primär um das Lesen und Schreiben von Dateien, da dies zum Standardrepertoire eines Programmierers gehört. 
+
+<br>
+
+<a name="Datenströme"></a>
+
+### Datenströme
+
+
