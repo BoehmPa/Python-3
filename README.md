@@ -603,5 +603,7 @@ Hier geht es primär um das Lesen und Schreiben von Dateien, da dies zum Standar
 <a name="Datenströme"></a>
 
 ### Datenströme
-
+Unter einem _Datenstrom_ (*data stream*) versteht man eine kontinuierliche Folge von Daten. Dabei werden zwei Typen unterschieden: _eingehende Datenströme_(*downstreams*) von denen Daten gelesen werden können und in _ausgehende Datenströme_ (*upstreams*) geschrieben werden können.
+Tastatureingaben, Bildschirmausgaben, Dateien und auch Netzwerkverbindungen werden als Datenstrom betrachtet.
+Sowohl die Eingabe eines Benutzers als auch die Ausgabe bspw. eines Strings auf dem Bildschirm sind nichts anderes als Operatrionen auf den Standardeingabe - bzw. -ausgabeströmen *stdin* und *stdout*. Auf den Ausgabestrom *stdout* kann mit der `print`-Funktion geschrieben werden und von dem Eingabestrom mitels der `input`-Funktion gelesen werden. 
 
