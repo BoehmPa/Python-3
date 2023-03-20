@@ -402,7 +402,7 @@ Bevor ein Modul verwendet werden kann, muss es über das Schlüsselwort `import`
 
 ### Grundstruktur
 
-Python macht Programmieren genaue Vorgaben, wie der Quellcode strukturiert sein muss. Dies führt zu einem strukturiertem und übersichtlichen Code, was besonders für Programmierneulinge gut ist.
+Python macht Programmierern genaue Vorgaben, wie der Quellcode strukturiert sein muss. Dies führt zu einem strukturiertem und übersichtlichen Code, was besonders für Programmierneulinge gut ist.
 Grundsätzlich besteht ein Python-Programm aus einzelnen _Anweisungen_, die entweder eine Zeile im Quelltext einnehmen. 
 
 ```py
