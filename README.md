@@ -25,6 +25,8 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Die pass-Anweisung](#die-pass-anweisung)
 - [Dateien](#dateien)
     - [Datenströme](#datenströme)
+    - [Daten aus Dateien lesen](#daten-aus-einer-datei-lesen)
+    - [Daten in Dateien schreiben](#daten-in-dateien-schreiben)
 
 
   
@@ -607,3 +609,68 @@ Unter einem _Datenstrom_ (*data stream*) versteht man eine kontinuierliche Folge
 Tastatureingaben, Bildschirmausgaben, Dateien und auch Netzwerkverbindungen werden als Datenstrom betrachtet.
 Sowohl die Eingabe eines Benutzers als auch die Ausgabe bspw. eines Strings auf dem Bildschirm sind nichts anderes als Operatrionen auf den Standardeingabe - bzw. -ausgabeströmen *stdin* und *stdout*. Auf den Ausgabestrom *stdout* kann mit der `print`-Funktion geschrieben werden und von dem Eingabestrom mitels der `input`-Funktion gelesen werden. 
 
+<br>
+<br>
+
+<a name="daten-aus-einer-datei-lesen"></a>
+
+### Daten aus einer Datei lesen
+Sollen Daten aus einer Datei gelesen werden, muss zuerst lesend auf diese zugegriffen werden. Dafür existiert die [dateien-lesen.txt](Dateien/dateien-lesen.txt)-Datei.
+Um die Datei zum Lesen zu öffnen, verwendet man die Funktion `open`. Diese gibt ein sogenanntes _Dateiobjekt_ (*file object*) zurück.
+
+```py
+> open("Dateipfad", "Modus")
+```
+
+In diesem Beispiel würde der Code folgendermaßen aussehen:
+
+```py
+> file_object = open("Dateien/dateien-lesen.txt","r")
+```
+Der Modus _"r"_ steht hierbei für read, sodass die Datei zum Lesen geöffnet wird. Nun können mit dem Datenobjekt Daten aus der Datei gelesen werden. Ist das Lesen der Datei beendet, muss sie explizit durch das Aufrufen der Methode `close` geschlossen werden.
+
+```py
+> file_object.close
+```
+Danach können keine weiteren Daten mehr aus dem Datenobjekt gelesen werden.
+
+<br>
+
+Sollen nun die Daten zeilenweise ausgelesen werden, ist dies relativ einfach, da das Datenobjekt zeilenweise iterierbar ist. 
+
+```py
+> file_object = open("Dateien/dateien-lesen.txt","r")
+  for line in file_object:
+    print(line)
+  file_object.close
+```
+
+Für Test- & Verständniszwecke erweitern wir nun dieses Programm, sodass wir die Orte in einem _dictionary_ speichern, in welchem die englischen Namen die Schlüssel und die deutschen Namen deren Werte sind.
+
+<br>
+
+Dafür wird zuerst ein leeres dictionary angelegt.
+
+```py
+> laender{}
+```
+
+Als nächstes wird die dateien-lesen.txt-Datei geöffnet und in einer Schleife über alle Zeilen iteriert.
+
+```py
+> file_object = open("Dateien/dateien-lesen.py", "r")
+  for line in file_object:
+    zuordnung = line.split(" ")
+    laender[zuordnung[0]] = zuordnung[1]
+  file_object.close
+```
+
+Mit der Methode `split` um die aktuelle Zeile in zwei Teile aufzuteilen. Der Teil links des Leerzeichens (das englische Wort) und den Teil rechts vom Leerzeichen (das deutsche Wort). Als nächstes wird ein Eintrag ins dictionary angelegt, mit dem Schlüssel zuordnung[0] und dem Wert zuordnung[1].
+In der Beispiel-Datei [dateien-lesen.py](Dateien/dateien-lesen.py) ist eine Erweiterung dieses Programmes zu finden.
+
+<br>
+<br>
+
+<a name="daten-in-dateien-schreiben"></a>
+
+### Daten in Dateien schreiben
