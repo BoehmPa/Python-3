@@ -256,11 +256,11 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 
 ```py
 > d["schlüssel2"] = "wert2.1"
-> d["schlüssel2"]
+  d["schlüssel2"]
 >>> 'wert2'
 
 > d["schlüssel3"] = "wert3"
-> d["schlüssel3"]
+  d["schlüssel3"]
 >>> 'wert3'
 ```
 
@@ -310,7 +310,7 @@ Will man beispielsweise einen string Ausgeben, muss dieser in `""` gesetzt werde
 > print("String.")
 
 > name = "Peter"
-> print(name)
+  print(name)
 >>> Peter
 ```
 
@@ -350,18 +350,18 @@ Zudem ist es auch möglich, Berechnungen Variablen zuzuweisen.
 
 ```py
 > zahl = 0.5
-> print(zahl)
+  print(zahl)
 >>> 0.5
 
 > string = "Hallo Welt"
-> print(string)
+  print(string)
 >>> Hallo Welt
 
 > print(1.5 + zahl)
 >>> 2
 
 > addition = 4 + 7
-> print(addition)
+  print(addition)
 >>> 11
 ```
 Bei der Bennennung der Variablen sollte man darauf achten, **nur Buchstaben des englischen Alphabets** zu wählen. Außerdem ist Python **_case sensitive_**.Heißt: man unterscheidet zwischen Groß- & Kleinschreibung. In der Praxis bedeutet das, dass die Variablen **`name`** und **`Name`** nicht identisch sind, sondern mit zwei unterschiedlichen Werten verknüpft sein können. 
@@ -506,7 +506,7 @@ Eine Beispiel-Datei befindet sich [hier](Kontrollstrukturen/Fallunterscheidungen
 > zahl = (20 if x == 1 else 30)
 
 ```
-Dies verkürzt zwar den Code,allerdings geht das auf Kosten der Lesbarkeit und Überschaubarkeit.
+Dies verkürzt zwar den Code, allerdings auf Kosten der Lesbarkeit und Überschaubarkeit.
 
 <br>
 <br>
