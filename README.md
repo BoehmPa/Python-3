@@ -95,8 +95,6 @@ Der Vorgang erfolgt folgendermaßen:
 
 ## Basics
 
-<br>
-
 <a name="grundlegende-datentypen"></a>
 
 ### Grundlegende Datentypen
