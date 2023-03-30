@@ -617,7 +617,7 @@ Dazu befindet sich eine Beispiel-Datei, mit einem kleinen Beispiel [hier](Dateie
 ### Ein Dateiobjekt erzeugen
 Einem Dateiobjekt kann über die Built-in Function `open` neben dem Namen und dem Modus noch weitere Parameter übergeben werden. Außerdem gibt es neben den beiden Modi `r` und `w` einige weitere, welche durchaus nützlich sein können.
 
- - #### Die Built-in Function "`open`"
+ - ### Die Built-in Function "`open`"
  Diese Funktion öffnet eine Datei und gibt das erzeugte Dateiobjekt zurück. Mithilfe dieses Datenobjektes können nachher die geünschten Operationen durchgeführt werden. 
  Der Standard-Befehl sieht so aus:
  ```py
@@ -637,10 +637,10 @@ Einem Dateiobjekt kann über die Built-in Function `open` neben dem Namen und de
 Der Parameter _mode_ ist optional und wird als `r`angenommen, sollte er weggelassen werden.
 Auf die zusätzlichen optinalen Parameter _buffering_, _encoding_, _errors_ und _newline_ wird später genauer eingegangen. 
 Trotzdem ist hier eine kleine Zusammenfassung:
-_buffering_: steuert die interne Puffergröße
-_encoding_: legt ds Encoding fest, in dem die Datei gelesen/geschrieben werden soll. Es legt fest, wie Sonderzeichen, die über den **ASCII-Zeichensatz** hinausgehen, abgespeichert werden sollen.
-_errors_: bestimmt, wie mit Fehlern bei der Codierungvon Zeichen im angegebenen Encoding umgegangen werden soll. Wird für _errors_ der Wert _ignore_ übergeben, werden sie ignoriert, bei _strict_ wird eine _ValueError_-Exception geworfen, was auch passiert, sollte der Parameter nicht gesetzt sein.
-_newline_: legt die Zeichen fest, welche beim Schreiben oder Lesen der Datei als Newline-Zeichen erkannz/verwendet werden sollen.
+- _buffering_: steuert die interne Puffergröße
+- _encoding_: legt ds Encoding fest, in dem die Datei gelesen/geschrieben werden soll. Es legt fest, wie Sonderzeichen, die über den **ASCII-Zeichensatz** hinausgehen, abgespeichert werden sollen.
+- _errors_: bestimmt, wie mit Fehlern bei der Codierungvon Zeichen im angegebenen Encoding umgegangen werden soll. Wird für _errors_ der Wert _ignore_ übergeben, werden sie ignoriert, bei _strict_ wird eine _ValueError_-Exception geworfen, was auch passiert, sollte der Parameter nicht gesetzt sein.
+- _newline_: legt die Zeichen fest, welche beim Schreiben oder Lesen der Datei als Newline-Zeichen erkannz/verwendet werden sollen.
 
-- #### Attribute und Methoden eines Datenobjektes
+- ### Attribute und Methoden eines Datenobjektes
 
