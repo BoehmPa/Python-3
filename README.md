@@ -636,7 +636,7 @@ Einem Dateiobjekt kann über die Built-in Function `open` neben dem Namen und de
 
 Der Parameter _mode_ ist optional und wird als `r`angenommen, sollte er weggelassen werden.
 Auf die zusätzlichen optinalen Parameter _buffering_, _encoding_, _errors_ und _newline_ wird später genauer eingegangen. 
-Trotzdem ist hier eine kleine Zusammenfassung:
+Für das Verständnis ist hier eine kleine Zusammenfassung:
 - _buffering_: steuert die interne Puffergröße
 - _encoding_: legt ds Encoding fest, in dem die Datei gelesen/geschrieben werden soll. Es legt fest, wie Sonderzeichen, die über den **ASCII-Zeichensatz** hinausgehen, abgespeichert werden sollen.
 - _errors_: bestimmt, wie mit Fehlern bei der Codierungvon Zeichen im angegebenen Encoding umgegangen werden soll. Wird für _errors_ der Wert _ignore_ übergeben, werden sie ignoriert, bei _strict_ wird eine _ValueError_-Exception geworfen, was auch passiert, sollte der Parameter nicht gesetzt sein.
