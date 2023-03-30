@@ -27,6 +27,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Datenströme](#datenströme)
     - [Daten aus Dateien lesen](#daten-aus-einer-datei-lesen)
     - [Daten in Dateien schreiben](#daten-in-dateien-schreiben)
+    - [Ein Dateiobjekt erzeugen](#ein-dateiobjekt-erzeugen)
 
 
   
@@ -599,3 +600,47 @@ In der Beispiel-Datei [dateien-lesen.py](Dateien/dateien-lesen.py) ist eine Erwe
 <a name="daten-in-dateien-schreiben"></a>
 
 ### Daten in Dateien schreiben
+
+Will man Daten in eine Datei schreiben, funktioniert das ähnlich wie das Lesen einer Datei. Hierzu muss statt dem Parameter `r`der Parameter `w`angegeben werden. Sollte die gewünschte Datei bereits vorhanden sein, wird diese geleert, falls nicht wird sie erstellt. 
+
+```py
+> fobj = open("dateien-schreiben.py", "w")
+```
+Sind alle Daten geschrieben, wird das Dateiobjekt wieder geschlossen.
+```py
+> fobj = close
+```
+Dazu befindet sich eine Beispiel-Datei, mit einem kleinen Beispiel [hier](Dateien/dateien-schreiben.py).
+
+<a name="ein-dateiobjekt-erzeugen"></a>
+
+### Ein Dateiobjekt erzeugen
+Einem Dateiobjekt kann über die Built-in Function `open` neben dem Namen und dem Modus noch weitere Parameter übergeben werden. Außerdem gibt es neben den beiden Modi `r` und `w` einige weitere, welche durchaus nützlich sein können.
+
+ - #### Die Built-in Function "`open`"
+ Diese Funktion öffnet eine Datei und gibt das erzeugte Dateiobjekt zurück. Mithilfe dieses Datenobjektes können nachher die geünschten Operationen durchgeführt werden. 
+ Der Standard-Befehl sieht so aus:
+ ```py
+ > open(filename, [mode,buffering,encoding,errors,newline])
+ ```
+ Die ersten beiden Parameter wurden bereits Besprochen. Dabei handelt es sich um den Dateinamen/den Dateipfad und um den Modus, in dem die Datei zu öffnen ist. Für den Parameter `mode` muss ein String angegeben werden. Dazu sind alle gültigen Werte in folgender Tabelle aufgelistet:
+
+| Modus    | Beschreibung | 
+| -------- | -------- | 
+| `r`      | Die Datei wird ausschließlich zum Lesen geöffnet   | 
+| `w`   | Die Datei wird ausschließlich zum Schreiben geöffnet, eine eventuell bestehende Datei gleichen Namens wird überschrieben    | 
+| `a`   | Die Datei wird ausschließlich zum Schreiben geöffnet, eine eventuell bestehende Datei gleichen Namens wird nicht überschrieben sondern erweitert   | 
+| `x`   | Die Datei wird ausschließlich zum Schreiben geöffnet, sofern diese nicht bereits existiert. Wenn eine Datei gleichen Namens vorhanden ist, wird eine _FileExistsError_-Exception geworfen  | 
+| `r+`, `w+`, `a+`, `x+`   | Die Datei wird zum Lesen und Schreiben geöffnet   | 
+| `rb`, `wb`, `ab`, `xb`, `r+b`, `w+b` ,`a+b`, `x+b`   | Die Datei wird im Binärmodus geöffnet. In diesem Fall müssen bytes-Instanzen anstelle von Strings verwendet werden   | 
+
+Der Parameter _mode_ ist optional und wird als `r`angenommen, sollte er weggelassen werden.
+Auf die zusätzlichen optinalen Parameter _buffering_, _encoding_, _errors_ und _newline_ wird später genauer eingegangen. 
+Trotzdem ist hier eine kleine Zusammenfassung:
+_buffering_: steuert die interne Puffergröße
+_encoding_: legt ds Encoding fest, in dem die Datei gelesen/geschrieben werden soll. Es legt fest, wie Sonderzeichen, die über den **ASCII-Zeichensatz** hinausgehen, abgespeichert werden sollen.
+_errors_: bestimmt, wie mit Fehlern bei der Codierungvon Zeichen im angegebenen Encoding umgegangen werden soll. Wird für _errors_ der Wert _ignore_ übergeben, werden sie ignoriert, bei _strict_ wird eine _ValueError_-Exception geworfen, was auch passiert, sollte der Parameter nicht gesetzt sein.
+_newline_: legt die Zeichen fest, welche beim Schreiben oder Lesen der Datei als Newline-Zeichen erkannz/verwendet werden sollen.
+
+- #### Attribute und Methoden eines Datenobjektes
+
