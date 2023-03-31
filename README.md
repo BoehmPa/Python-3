@@ -27,6 +27,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Datenströme](#datenströme)
     - [Daten aus Dateien lesen](#daten-aus-einer-datei-lesen)
     - [Daten in Dateien schreiben](#daten-in-dateien-schreiben)
+    - [Ein Dateiobjekt erzeugen](#ein-dateiobjekt-erzeugen)
 
 
   
@@ -37,17 +38,14 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
 
 
 
-<br>
-<br>
-<br>
-<br>
+
+
 
 <a name="einführung"></a>
 
 ## Einführung
 Python ist eine Programmiersprache, welche Entwicklern sowohl das objekorientiere als auch das funktionale Programmieren ermöglicht. 
 
-<br>
 
 <a name="grundlegende-konzepte"></a>
 
@@ -59,7 +57,6 @@ Der Vorgang erfolgt folgendermaßen:
 - Es passiert den Compiler, welcher den Code von der Sprache Python in den Byte-Code übersetzt.
 - der Interpreter liest den Byte-Code und führt ihn aus.
 
-<br>
 
 <a name="Stärken"></a>
 
@@ -77,7 +74,6 @@ Der Vorgang erfolgt folgendermaßen:
 - automatische Speicherverwaltung
 - sehr gute Erweitbarkeit
  
-<br>
 
 <a name="einsatzgebiete"></a>
 
@@ -89,13 +85,10 @@ Der Vorgang erfolgt folgendermaßen:
 - maschinelles Lernen (durch Python-Bibliotheken)
 - Deep Learning (durch Python-Bibliotheken)
 
-<br>
 
 <a name="basics"></a>
 
 ## Basics
-
-<br>
 
 <a name="grundlegende-datentypen"></a>
 
@@ -104,12 +97,9 @@ Der Vorgang erfolgt folgendermaßen:
 Ein kurzer Überblick über die grundlegenden Datentypen. Im weiteren Verlauf werden diese genauer erklärt.
 Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` eingeben) oder [diese Datei](Basics/Grunddatentypen/grunddatentypen.py) (enthält die vollständigen Befehle inklusive `print()`) genutzt werden.
 
-<br>
-<br>
 
 - ### Ganze Zahlen (integer)
 
-<br>
 
 ```py
 > 9
@@ -118,7 +108,6 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 > 12
 ```
 
-<br>
 
 #### Rechenoperationen:
 
@@ -139,12 +128,9 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 >>> 168
 ```
 
-<br>
-<br>
-
 - ### Gleitkommazahlen (float)
 
-<br>
+
 
 ```py
 > 0.5
@@ -152,7 +138,6 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 > +0.4578930723894579275
 ```
 
-<br>
 
 #### Rechenoperationen
 
@@ -170,12 +155,9 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 >>> 153.44825532
 ```
 
-<br>
-<br>
 
 - ### Zeichenketten (strings)
 
-<br>
 
 ```py
 > "Hallo Welt"
@@ -191,7 +173,6 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 >>> Ich sage "Hallo Welt!"
 ```
 
-<br>
 
 #### Operationen
 
@@ -200,12 +181,9 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 >>> Hallo Welt
 ```
 
-<br>
-<br>
 
 - ### Listen (list)
 
-<br>
 
 ```py
 > [1,2,3]
@@ -218,7 +196,6 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 >>> ['Hallo', 2, 3, -1.75, [1, 2, 3]]
 ```
 
-<br>
 
 #### Operationen
 
@@ -227,18 +204,13 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 >>> [1, 2, 3, 'Python', 'ist', 'super!']
 ```
 
-<br>
-<br>
 
 - ### Wörterbuch (dictionary)
-
-<br>
 
 ```py
 > d = {"schlüssel1" : "wert1", "schlüssel2" : "wert2"}
 ```
 
-<br>
 
 #### Zugriff auf Werte
 
@@ -250,7 +222,6 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 >>> 'wert2'
 ```
 
-<br>
 
 #### Modifikation
 
@@ -264,8 +235,6 @@ Zum Testen kann das Python-Terminal (in Powershell-Terminal den Befehl `python` 
 >>> 'wert3'
 ```
 
-<br>
-<br>
 
 <a name="operatoren"></a>
 
@@ -291,8 +260,6 @@ Python bietet verschiedene Arten von Operatoren wie arithmetische und logische O
 
 Diese Vergleiche können mit einander verknüpft werden, da diese nur **`TRUE`** oder **`FALSE`** ausgeben können. Dies erfolgt mit den Verknüpfungen _`and`_ oder _`or`_. 
 
-<br>
-<br>
 
 <a name="ausgabe"></a>
 
@@ -316,8 +283,6 @@ Will man beispielsweise einen string Ausgeben, muss dieser in `""` gesetzt werde
 
 Dafür kann ebenfalls die Datei ["grunddatentypen.py"](Basics/Grunddatentypen/grunddatentypen.py) eingesehen werden. 
 
-<br>
-<br>
 
 <a name="kommentare"></a>
 
@@ -338,8 +303,6 @@ Will man einen Kommentar über mehrere Zeilen schreiben, dann verfasst man ihn s
 
 Genau genommen wird mit dieser Notation kein Kommentar, sondern ein mehrzeiliger String, erzeugt.
 
-<br>
-<br>
 
 <a name="variablen"></a>
 
@@ -366,8 +329,6 @@ Zudem ist es auch möglich, Berechnungen Variablen zuzuweisen.
 ```
 Bei der Bennennung der Variablen sollte man darauf achten, **nur Buchstaben des englischen Alphabets** zu wählen. Außerdem ist Python **_case sensitive_**.Heißt: man unterscheidet zwischen Groß- & Kleinschreibung. In der Praxis bedeutet das, dass die Variablen **`name`** und **`Name`** nicht identisch sind, sondern mit zwei unterschiedlichen Werten verknüpft sein können. 
 
-<br>
-<br>
 
 <a name="ausführen-eines-python--scripts-in-der-shell"></a>
 
@@ -380,8 +341,6 @@ Manchmal kann es vorkommen, dass man ein Python-Script nicht über eine IDE ausf
 ```
 Eine Beispiel-Datei befindet sich [hier](Basics/Ausführen/py_in_shell.py).
 
-<br>
-<br>
 
 <a name="module"></a>
 
@@ -394,9 +353,6 @@ Bevor ein Modul verwendet werden kann, muss es über das Schlüsselwort `import`
 ```py
 > import math
 ```
-
-<br>
-<br>
 
 <a name="grundstruktur"></a>
 
@@ -422,16 +378,12 @@ Einige Anweisungen lassen sich in einen Anweisungskopf und in einen Anweisungsk�
 >>>
 ```
 
-<br>
-<br>
-
 <a name="kontrollstrukturen"></a>
 
 ## Kontrollstrukturen
 
 Unter einer _Kontrollstruktur_ versteht man ein Konstrukt zur Steuerung des Programmablaufs. In Python unterscheidet man zwei Arten von Kontrollstrukturen: **Schleifen** und **Fallunterscheidungen**. Kontrollstrukturen können beliebig ineinander verschachtelt werden. Die Einrückungstiefe wächst dabei kontinuierlich. 
 
-<br>
 
 <a name="fallunterscheidungen"></a>
 
@@ -439,7 +391,6 @@ Unter einer _Kontrollstruktur_ versteht man ein Konstrukt zur Steuerung des Prog
 
 Fallunterscheidungen verknüpfen einen Code-Block an eine Bedingung. Man unterscheidet zwei Arten von Fallunterscheidungen: `if`-Anweisungen und _bedingte Ausdrücke_
 
-<br>
 
 - #### Die if-Anweisung
 Die einfachste Möglichkeit der Fallunterscheidung ist die `if`-Anweisung. Diese besteht aus einem Anweisungskopf, welcher eine Bedingung enthält, und aus einem Codeblock als Anweisungskörper. Dieser Codeblock wird nur ausgelöst, falls die Bedingung `TRUE` ist. Hierfür werden die logischen Ausdrücke (siehe Operatoren/Vergleiche) benutzt.
@@ -450,7 +401,6 @@ Eine Beispiel-Datei, mit einer kompletten `if`-Anweisung findest du [hier](Kontr
     Anweisung
 ```
 
-<br>
 
 #### Beispiel:
 
@@ -464,7 +414,6 @@ Eine Beispiel-Datei, mit einer kompletten `if`-Anweisung findest du [hier](Kontr
     print("oder größer 5)
 ```
 
-<br>
 
 Benötigt man mehrere Fallunterscheidungen, kann man nach einem `if` noch beliebig viele `elif` erfolgen.
 
@@ -479,7 +428,6 @@ Benötigt man mehrere Fallunterscheidungen, kann man nach einem `if` noch belieb
         Anweisung
 ```
 
-<br>
 
 Als letzte Möglichkeit kann man auch alle unbehandelten Fälle auf einma abfangen. Dazu kann eine `if`-Anweisung um einen `else`-Zweig erweitert werden. Dieser muss am Ende der `if`-Anweisung geschrieben werden.
 
@@ -495,9 +443,6 @@ Als letzte Möglichkeit kann man auch alle unbehandelten Fälle auf einma abfang
 ```
 Der `else`-Zweig wird nur ausgeführt, wenn keine der vorangegangen Bedingungen erfüllt wurde. Zu jeder `if`-Anweisung darf nur ein `else`-Zweig gehören.
 
-<br>
-<br>
-
 - ### Bedingte Audrücke
 _Bedingte Audrücke_ ähneln stark den `if`-Anweisungen, werden jedoch in eine einzige Zeile geschrieben. _Bedingte Audrücke_ enthalten `if` und `else`.
 Eine Beispiel-Datei befindet sich [hier](Kontrollstrukturen/Fallunterscheidungen/bedingte-Ausdr%C3%BCcke.py).
@@ -508,15 +453,12 @@ Eine Beispiel-Datei befindet sich [hier](Kontrollstrukturen/Fallunterscheidungen
 ```
 Dies verkürzt zwar den Code, allerdings auf Kosten der Lesbarkeit und Überschaubarkeit.
 
-<br>
-<br>
 
 <a name="Schleifen"></a>
 
 ### Schleifen
 Schleifen ermöglichen es einen Codeblock, den Schleifenkörper, mehrfach hintereinander auszuführen, solange, bis eine bestimmte Bedingung erfüllt ist. In Python gibt es zwei Arten von Schleifen: die `while`-Schleife und die `for`-Schleife.
 
-<br>
 
 - ### While-Schleifen
 
@@ -527,7 +469,6 @@ Eine `while`-Schleife besteht asi einem Schleifenkopf, in welchem die Bedingung 
     Anweisung
 ```  
 
-<br>
 
 #### Abbruch einer Schleife
 Eine Schleife kann an einer bestimmten Stelle mit `break` abgebrochen werden. 
@@ -538,7 +479,6 @@ Eine Schleife kann an einer bestimmten Stelle mit `break` abgebrochen werden.
     break
 ```
 
-<br>
 
 #### Abbruch eines Schleifendurchlaufs
 Möchte man nur den akutellen Schleifendurchlauf abbrechen, kann dies mit `continue`erreicht werden.
@@ -549,9 +489,6 @@ Möchte man nur den akutellen Schleifendurchlauf abbrechen, kann dies mit `conti
     continue
 ```
 Dabei wird nicht die gesamte Schleife abgebrochen, sondern lediglich der aktuelle Durchlauf.
-
-<br>
-<br>
 
 - ### For-Schleifen
 Die `for`-Schleife wird verwendet, um ein _iterierbares Objekt_ (z.B. Listen oder Strings) zu durchlaufen. Dafür folgt auf `for` ein Bezeichner, das Schlüsselwort `in` und der Name des iterierbaren Objektes. [Beispiel](Kontrollstrukturen/Schleifen/for-Schleife.py)
@@ -577,8 +514,6 @@ Die `for`-Schleife kann auch als Zählerschleife benutzt werden. Dazu besitzt si
     Anweisung
 ```
 
-<br>
-<br>
 
 <a name="die-pass-anweisung"></a>
 
@@ -592,15 +527,12 @@ Während der Entwicklung kann es vorkommen, das eine Kontrollstruktur nur teilwe
     print(x)
 ```
 
-<br>
-<br>
 
 <a name="Dateien"></a>
 
 ## Dateien
 Hier geht es primär um das Lesen und Schreiben von Dateien, da dies zum Standardrepertoire eines Programmierers gehört. 
 
-<br>
 
 <a name="Datenströme"></a>
 
@@ -609,8 +541,6 @@ Unter einem _Datenstrom_ (*data stream*) versteht man eine kontinuierliche Folge
 Tastatureingaben, Bildschirmausgaben, Dateien und auch Netzwerkverbindungen werden als Datenstrom betrachtet.
 Sowohl die Eingabe eines Benutzers als auch die Ausgabe bspw. eines Strings auf dem Bildschirm sind nichts anderes als Operatrionen auf den Standardeingabe - bzw. -ausgabeströmen *stdin* und *stdout*. Auf den Ausgabestrom *stdout* kann mit der `print`-Funktion geschrieben werden und von dem Eingabestrom mitels der `input`-Funktion gelesen werden. 
 
-<br>
-<br>
 
 <a name="daten-aus-einer-datei-lesen"></a>
 
@@ -634,7 +564,6 @@ Der Modus _"r"_ steht hierbei für read, sodass die Datei zum Lesen geöffnet wi
 ```
 Danach können keine weiteren Daten mehr aus dem Datenobjekt gelesen werden.
 
-<br>
 
 Sollen nun die Daten zeilenweise ausgelesen werden, ist dies relativ einfach, da das Datenobjekt zeilenweise iterierbar ist. 
 
@@ -647,7 +576,6 @@ Sollen nun die Daten zeilenweise ausgelesen werden, ist dies relativ einfach, da
 
 Für Test- & Verständniszwecke erweitern wir nun dieses Programm, sodass wir die Orte in einem _dictionary_ speichern, in welchem die englischen Namen die Schlüssel und die deutschen Namen deren Werte sind.
 
-<br>
 
 Dafür wird zuerst ein leeres dictionary angelegt.
 
@@ -668,9 +596,51 @@ Als nächstes wird die dateien-lesen.txt-Datei geöffnet und in einer Schleife �
 Mit der Methode `split` um die aktuelle Zeile in zwei Teile aufzuteilen. Der Teil links des Leerzeichens (das englische Wort) und den Teil rechts vom Leerzeichen (das deutsche Wort). Als nächstes wird ein Eintrag ins dictionary angelegt, mit dem Schlüssel zuordnung[0] und dem Wert zuordnung[1].
 In der Beispiel-Datei [dateien-lesen.py](Dateien/dateien-lesen.py) ist eine Erweiterung dieses Programmes zu finden.
 
-<br>
-<br>
 
 <a name="daten-in-dateien-schreiben"></a>
 
 ### Daten in Dateien schreiben
+
+Will man Daten in eine Datei schreiben, funktioniert das ähnlich wie das Lesen einer Datei. Hierzu muss statt dem Parameter `r`der Parameter `w`angegeben werden. Sollte die gewünschte Datei bereits vorhanden sein, wird diese geleert, falls nicht wird sie erstellt. 
+
+```py
+> fobj = open("dateien-schreiben.py", "w")
+```
+Sind alle Daten geschrieben, wird das Dateiobjekt wieder geschlossen.
+```py
+> fobj = close
+```
+Dazu befindet sich eine Beispiel-Datei, mit einem kleinen Beispiel [hier](Dateien/dateien-schreiben.py).
+
+<a name="ein-dateiobjekt-erzeugen"></a>
+
+### Ein Dateiobjekt erzeugen
+Einem Dateiobjekt kann über die Built-in Function `open` neben dem Namen und dem Modus noch weitere Parameter übergeben werden. Außerdem gibt es neben den beiden Modi `r` und `w` einige weitere, welche durchaus nützlich sein können.
+
+ - ### Die Built-in Function "`open`"
+ Diese Funktion öffnet eine Datei und gibt das erzeugte Dateiobjekt zurück. Mithilfe dieses Datenobjektes können nachher die geünschten Operationen durchgeführt werden. 
+ Der Standard-Befehl sieht so aus:
+ ```py
+ > open(filename, [mode,buffering,encoding,errors,newline])
+ ```
+ Die ersten beiden Parameter wurden bereits Besprochen. Dabei handelt es sich um den Dateinamen/den Dateipfad und um den Modus, in dem die Datei zu öffnen ist. Für den Parameter `mode` muss ein String angegeben werden. Dazu sind alle gültigen Werte in folgender Tabelle aufgelistet:
+
+| Modus    | Beschreibung | 
+| -------- | -------- | 
+| `r`      | Die Datei wird ausschließlich zum Lesen geöffnet   | 
+| `w`   | Die Datei wird ausschließlich zum Schreiben geöffnet, eine eventuell bestehende Datei gleichen Namens wird überschrieben    | 
+| `a`   | Die Datei wird ausschließlich zum Schreiben geöffnet, eine eventuell bestehende Datei gleichen Namens wird nicht überschrieben sondern erweitert   | 
+| `x`   | Die Datei wird ausschließlich zum Schreiben geöffnet, sofern diese nicht bereits existiert. Wenn eine Datei gleichen Namens vorhanden ist, wird eine _FileExistsError_-Exception geworfen  | 
+| `r+`, `w+`, `a+`, `x+`   | Die Datei wird zum Lesen und Schreiben geöffnet   | 
+| `rb`, `wb`, `ab`, `xb`, `r+b`, `w+b` ,`a+b`, `x+b`   | Die Datei wird im Binärmodus geöffnet. In diesem Fall müssen bytes-Instanzen anstelle von Strings verwendet werden   | 
+
+Der Parameter _mode_ ist optional und wird als `r`angenommen, sollte er weggelassen werden.
+Auf die zusätzlichen optinalen Parameter _buffering_, _encoding_, _errors_ und _newline_ wird später genauer eingegangen. 
+Für das Verständnis ist hier eine kleine Zusammenfassung:
+- _buffering_: steuert die interne Puffergröße
+- _encoding_: legt ds Encoding fest, in dem die Datei gelesen/geschrieben werden soll. Es legt fest, wie Sonderzeichen, die über den **ASCII-Zeichensatz** hinausgehen, abgespeichert werden sollen.
+- _errors_: bestimmt, wie mit Fehlern bei der Codierungvon Zeichen im angegebenen Encoding umgegangen werden soll. Wird für _errors_ der Wert _ignore_ übergeben, werden sie ignoriert, bei _strict_ wird eine _ValueError_-Exception geworfen, was auch passiert, sollte der Parameter nicht gesetzt sein.
+- _newline_: legt die Zeichen fest, welche beim Schreiben oder Lesen der Datei als Newline-Zeichen erkannz/verwendet werden sollen.
+
+- ### Attribute und Methoden eines Datenobjektes
+
