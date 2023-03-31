@@ -29,7 +29,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Daten in Dateien schreiben](#daten-in-dateien-schreiben)
     - [Ein Dateiobjekt erzeugen](#ein-dateiobjekt-erzeugen)
 - [Das Laufzeitmodell](#das-laufzeitmodell)
-    - [Die Struktur von Instanzen](#die-struktur-von-Instanzen)
+    - [Die Struktur von Instanzen](#die-struktur-von-instanzen)
 
 
   
@@ -701,7 +701,7 @@ Besonders wichtig hierbei ist, dass es nach wie vor nur eine Instanz mit dem Wer
 >> 3456
 ```
 
-<a name="die-struktur-von-instanzen")></a>
+<a name="die-struktur-von-instanzen"></a>
 
 ### Die Struktur von Instanzen
 Jede Instanz in Python umfasst drei Merkmale: ihren _Datentyp_, ihren _Wert_ und ihre _Identität_. 
@@ -725,5 +725,7 @@ Der Datentyp dient bei der Erzeugung der Instanz als Bauplan und legt fest, welc
 >> False
 ```
 Dabei sollte aber beachtet werden, dass sich ein Typ nur auf Instanzen bezieht, und nichts mit den verknüpften Referenzen zu tun hat. Eine Referenz hat keinen Typ und kann Instanzen beliebiger Typen referenzieren. Eine Referenz referenziert also auf eine Instanz mit einem bestimmten Datentyp.
+
+
 
 
