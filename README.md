@@ -747,3 +747,13 @@ Diese können auch mit dem Operator _==_ verglichen werden.
 <a name="referenzen-und-instanzen-freigeben"></a>
 
 ### Referenzen und Instanzen freigeben
+Während eines Programmablaufs werden in der Regel sehr viele Instanzen angelegt, die aber nicht alle die ganze Zeit benötigt werden. Deshalb wäre es wünschenswert, wenn es eine Möglichkeit gäbe, nicht mehr benötigte Instanzen auf Anfrage zu entfernen. Python lässt den Programmierer den Speicher nicht direkt verwalten, sondern übernimmt dies für ihn. Instanzen, auf die keine Referenzen mehr verweisen, werden von Python als nicht mehr benötigt eingestuft und dementsprechend wieder freigegeben. Will man also eine Instanz entfernen, muss die dazugehörige Referenz gelöscht werden. Dafür gibt es die _del_-Anweisung. Nach ihrer Freigabe existiert die Referenz nicht mehr, ein Versuch auf diese zuzugreifen führt zu einem _NameError_.
+
+```py
+> v1 = 1337
+> del v1
+> v1
+>>> Traceback (most recent call last): File "<stdin>", line 1, in <module> NameError: name 'v1' is not definded
+> del v1, v2, v3
+```
+Um zu erkennen, wann für eine Instanz keine Referenzen mehr existieren, speichert Python intern für jede Instanz einen Zähler, den sogenannten _Referenzzähler_ auch _reference count_. Für frisch erzeugte Instanzen hat er den Wert Null. Immer wenn eine neue Referenz auf eine Instanz erzeugt wird, erhöht sich der Referenzzähler der Instanz um eins, und immer wenn eine Referenz freigegeben wird, wurd er um eins verringert. Damit gibt der Referenzzähler einer Instanz stets die aktuelle Anzahl von Referenzen an, die auf die Instanz verweisen. Erreicht der Zähler den Wert Null, gibt es für die Instanz keine Referenzen mehr. Da Instanzen für Programmierer nur über Referenzen zugänglich sind, ist der Zugriff auf eine solche Instanz nicht mehr möglich - sie kann gelöscht werden.
