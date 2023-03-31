@@ -28,6 +28,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Daten aus Dateien lesen](#daten-aus-einer-datei-lesen)
     - [Daten in Dateien schreiben](#daten-in-dateien-schreiben)
     - [Ein Dateiobjekt erzeugen](#ein-dateiobjekt-erzeugen)
+- [Das Laufzeitmodell](#das-laufzeitmodell)
 
 
   
@@ -643,4 +644,44 @@ Für das Verständnis ist hier eine kleine Zusammenfassung:
 - _newline_: legt die Zeichen fest, welche beim Schreiben oder Lesen der Datei als Newline-Zeichen erkannz/verwendet werden sollen.
 
 - ### Attribute und Methoden eines Datenobjektes
+Die folgende Tabelle gibt eine grobe Übersicht über die wichtigsten Methoden eines Dateiobjekts.
 
+| Methode  | Beschreibung |
+|----------|----------|
+| `close()`| Schließt ein Dateiobjekt   |
+| `fileno()`    | Gibt den Deskriptor der geöffneten Datei als ganze Zahl zurück|
+| `flush()`    | Verfügt, dass anstehende Schreiboperationen sofort ausgeführt werden   |
+| `isatty()` | _True_, wenn das Dateiobjekt auf einem Datenstrom geöffnet wurde, der nicht an beliebiger Stellegeschrieben oder gelesen werden kann  |
+| `next()`| Liest die nächste Zeile der Datei ein und gibt sie als String zurück   |
+| `read([size])` | Liest _size_ Bytes der Datei ein oder weniger, wenn vorher das Ende der Datei erreicht wurde. Sollte _size_ nicht angegeben sein, wird die Datei vollständig gelesen. Die Daten werden abhängig vom Lesemodus als String oder _bytes_-String zurückgegeben   |
+| `readline([size])`    | Liest eine Zeile der Datei ein, Durch Angabe von _size_ lässt sich die Anzahl der zu lesenden Bytes begrenzen  |
+| `readline([sizehint])`    | Liest alle Zeilen und gibt sie in Form einer Liste von Strings zurück. Sillte _sizehint_ angegeben sein, wird nur gelesen, bis ungefähr _sizehint_ Bystes gelesen wurden  |
+| `seek(offset, [whence])`   | Setzt die aktuelle Schreib-/Leseposition in der Datei auf _offset_   |
+| `tell()`    | Liefert die aktuelle Schreib-/Leseposition in der Datei   |
+|`truncate([size])`    | Löscht in der Datei alle Daten, die hinter der aktuellen Schreib-/Lesepostion stehen, bzw. - sofern angegeben- alles außer den ersten _size_ Bytes   |
+| `write(str)`    | Schreibt den String in _str_ in die Datei  |
+| `writelines(iterable)`   | Schreibt mehrere Zeilen in die Datei. Das iterierbare Objekt _iterable_ muss Strings durchlaufen, möglich ist zum Beispiel eine Liste von Strings   |
+
+<a name="das-Laufzeitmodell"></a>
+
+### Das Laufzeitmodell
+In diesem Abschnitt wird sich damit beschäftigt, wie Python Variablen zur Laufzeit verwaltet und welche Besonderheiten sich dabei für die Programmierung ergeben.
+<br>
+Variablen sind Platzhalter für Werte wie Zahlen, Listen oder sonstige Strukturen. Für die Programmierung ist der Begriff _Speicherstelle_ eher zutreffend, da hier Variablen vor allem den Zweck erfüllen, Daten für ihre Weiterverwendung zwischenzuspeicher. Um zu verstehen, was intern passiert, wenn eine neue Variable erzeugt wird, müssen zwei Begriffe voneinander Unterschieden werden: _Instanz_ und _Referenz_. Eine Instanz ist ein konkretes Dateiobjekt im Speicher, das nach der Vorlage eines bestimmten Datentyps erzeugt wurde - zum Beispiel die Zahl 132 nach der Vorlage des Datentyp Integer.
+Am einfachsten lässt sich eine Instanz einer Ganzzahl beispielsweise so erzeugen:
+```py
+> 1234
+>> 1234
+```
+Für die Programmierung ist diese Instanz aber wenig praktisch, da sie zwar nach der Erzeugung ausgegeben wird, danach aber nicht mehr zugänglich ist und somit ihr Wert nicht weiterverwendet werden kann. Weshalb nun Referenzen eine Rolle spielen. "Referenz" bedeutet so viel wie "Verweis". Erst durch Referenzen wird es möglich, mit Instanzen zu arbeiten, weil Referenzen den Zugriff auf diese ermöglichen. Die einfachste Form einer Referenz in `Python` ist ein _symbolischer Name_- wie beispielsweise _a_. Mit dem Zuweisungsoperator _=_fwird eine Referenz auf eine Instanz erzeugt. Dabei steht die Referenz links und die Instanz rechts vom Operator.
+
+```py
+> a = 1234
+``` 
+Es ist auch möglich, bereits referenzierte Instanzen mit weriteren Referenzen zu versehen:
+
+```py
+> referenz1 = 3456
+> referenz2 = referenz1
+```
+Eine Datei mit Beispielen befindet sich [hier](Laufzeitmodell/instanzen-und-referenzen.py)
