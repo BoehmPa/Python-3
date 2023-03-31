@@ -29,6 +29,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Daten in Dateien schreiben](#daten-in-dateien-schreiben)
     - [Ein Dateiobjekt erzeugen](#ein-dateiobjekt-erzeugen)
 - [Das Laufzeitmodell](#das-laufzeitmodell)
+    - [Die Struktur von Instanzen](#die-struktur-von-Instanzen)
 
 
   
@@ -664,7 +665,7 @@ Die folgende Tabelle gibt eine grobe Übersicht über die wichtigsten Methoden e
 
 <a name="das-Laufzeitmodell"></a>
 
-### Das Laufzeitmodell
+## Das Laufzeitmodell
 In diesem Abschnitt wird sich damit beschäftigt, wie Python Variablen zur Laufzeit verwaltet und welche Besonderheiten sich dabei für die Programmierung ergeben.
 <br>
 Variablen sind Platzhalter für Werte wie Zahlen, Listen oder sonstige Strukturen. Für die Programmierung ist der Begriff _Speicherstelle_ eher zutreffend, da hier Variablen vor allem den Zweck erfüllen, Daten für ihre Weiterverwendung zwischenzuspeicher. Um zu verstehen, was intern passiert, wenn eine neue Variable erzeugt wird, müssen zwei Begriffe voneinander Unterschieden werden: _Instanz_ und _Referenz_. Eine Instanz ist ein konkretes Dateiobjekt im Speicher, das nach der Vorlage eines bestimmten Datentyps erzeugt wurde - zum Beispiel die Zahl 132 nach der Vorlage des Datentyp Integer.
@@ -684,4 +685,45 @@ Es ist auch möglich, bereits referenzierte Instanzen mit weriteren Referenzen z
 > referenz1 = 3456
 > referenz2 = referenz1
 ```
-Eine Datei mit Beispielen befindet sich [hier](Laufzeitmodell/instanzen-und-referenzen.py)
+Besonders wichtig hierbei ist, dass es nach wie vor nur eine Instanz mit dem Wert _3456_ im Speicher gibt. Die Instanz wird also nicht kopiert, sondern nur ein weiteres mal _referenziert_. Ebenso wichtig zu beachten ist, dass Referenzen auf dieselbe Instanz voneinander unabhängig sind und sich der Wert, auf den die anderen Referenzen verweisen, nicht ändert, wenn wir einer von ihnen eine neue Instanz zuweisen.
+
+```py
+> referenz1 = 3456
+> referenz2 = referenz1
+> print(referenz1)
+>> 3456
+> print(referenz2)
+>> 3456
+> referenz1 = 1234
+> print(referenz1)
+>> 1234
+> print(referenz2)
+>> 3456
+```
+
+<a name="die-struktur-von-instanzen")></a>
+
+### Die Struktur von Instanzen
+Jede Instanz in Python umfasst drei Merkmale: ihren _Datentyp_, ihren _Wert_ und ihre _Identität_. 
+Als Beispiel könnte man sagen die Referenz _referenz1_ referenziert auf ein Instanz mit der Identiät 1234567, vom Dateityp int und dem Wert 1234.
+
+- #### Datentyp
+Der Datentyp dient bei der Erzeugung der Instanz als Bauplan und legt fest, welche Werte die Instanz annehmen darf. So erlaubt der Datentyp _int_ das Speichern einer ganzen Zahl. Strings lassen sich mit dem Datentyp _str_ verwalten. Die Datentypen können herausgefunden werden:
+```py
+> type(1337)
+>> <class 'int' >
+> type("Hallo Welt")
+>> <class 'str'>
+> v1 = 2674
+> type(v1)
+>> <class 'int'>
+> type(v1) == type(2674)
+>> True
+> type(v1) == int
+>> True
+> type(v1) == str
+>> False
+```
+Dabei sollte aber beachtet werden, dass sich ein Typ nur auf Instanzen bezieht, und nichts mit den verknüpften Referenzen zu tun hat. Eine Referenz hat keinen Typ und kann Instanzen beliebiger Typen referenzieren. Eine Referenz referenziert also auf eine Instanz mit einem bestimmten Datentyp.
+
+
