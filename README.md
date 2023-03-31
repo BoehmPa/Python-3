@@ -30,7 +30,7 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
     - [Ein Dateiobjekt erzeugen](#ein-dateiobjekt-erzeugen)
 - [Das Laufzeitmodell](#das-laufzeitmodell)
     - [Die Struktur von Instanzen](#die-struktur-von-instanzen)
-
+    - [Referenzen und Instanzen freigeben](#referenzen-und-instanzen-freigeben)
 
   
 
@@ -726,6 +726,24 @@ Der Datentyp dient bei der Erzeugung der Instanz als Bauplan und legt fest, welc
 ```
 Dabei sollte aber beachtet werden, dass sich ein Typ nur auf Instanzen bezieht, und nichts mit den verknüpften Referenzen zu tun hat. Eine Referenz hat keinen Typ und kann Instanzen beliebiger Typen referenzieren. Eine Referenz referenziert also auf eine Instanz mit einem bestimmten Datentyp.
 
+- ### Wert
+Was den Wert einer Instanz konkret ausmacht, hängt von ihrem Typ ab. Dies können Zahlen, Zeichenketten oder Daten anderer Typen sein. Diese können mit dem Operator _==_ bezüglich ihres Wertes verglichen werden. Dies ist jedoch nur sinnvoll, wenn es sich auf strukturell ähnliche Datentypen bezieht - etwas Gleitkommazahlen und Ganzzahlen.
 
+- ### Identität
+Die Identität einer Instanz dient dazu, diese von allen anderen Instanzen zu unterscheiden. Sie ist mit dem individuellen Fingerabdruck eines Menschen zu vergleichen, da sie für jede Instanz programmweit eindeutig ist und sich nicht ändern kann. Eine Identität ist eine Ganzzahl und lässt sich mithilfe der Funktion _id_ ermitteln:
 
+```py
+> id(variable)
+> id(instanz)
+```
+Identitäten werden immer dann wichtig, wenn man prüfen möchte, ob es sich um eine ganz bestimmte Instanz handelt und nicht nur um eine mit dem selben Wert und dem gleichen Typ.
+Diese können auch mit dem Operator _==_ verglichen werden.
 
+```py
+> id(referenz1) == id(referenz2)
+>> True/False
+```
+
+<a name="referenzen-und-instanzen-freigeben"></a>
+
+### Referenzen und Instanzen freigeben
