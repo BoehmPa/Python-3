@@ -31,6 +31,8 @@ Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfa
 - [Das Laufzeitmodell](#das-laufzeitmodell)
     - [Die Struktur von Instanzen](#die-struktur-von-instanzen)
     - [Referenzen und Instanzen freigeben](#referenzen-und-instanzen-freigeben)
+    - [Mutable vs. immutable Datentypen](#mutable-vs-immutable-datentypen)
+- [Funktionen, Methoden und Attribute](#funktionen-methoden-und-attribute)
 
   
 
@@ -757,3 +759,44 @@ Während eines Programmablaufs werden in der Regel sehr viele Instanzen angelegt
 > del v1, v2, v3
 ```
 Um zu erkennen, wann für eine Instanz keine Referenzen mehr existieren, speichert Python intern für jede Instanz einen Zähler, den sogenannten _Referenzzähler_ auch _reference count_. Für frisch erzeugte Instanzen hat er den Wert Null. Immer wenn eine neue Referenz auf eine Instanz erzeugt wird, erhöht sich der Referenzzähler der Instanz um eins, und immer wenn eine Referenz freigegeben wird, wurd er um eins verringert. Damit gibt der Referenzzähler einer Instanz stets die aktuelle Anzahl von Referenzen an, die auf die Instanz verweisen. Erreicht der Zähler den Wert Null, gibt es für die Instanz keine Referenzen mehr. Da Instanzen für Programmierer nur über Referenzen zugänglich sind, ist der Zugriff auf eine solche Instanz nicht mehr möglich - sie kann gelöscht werden.
+
+<a name="mutable-vs.-immutable-datentypen"></a>
+
+### Mutable vs. immutable Datentypen
+Python unterscheidet grundlegend zwei Arten von Datentypen: _mutablen_ Datentypen und _immutablen_ Datentypen. Der Unterschied besteht darin, ob sich der Wert der Instanz zur Laufzeit ändern kann, ob sie also veränderbar ist. Instanzen eine mutablen Typs sind dazu in der Lage, nach ihrer Erzeugung andere Werte anzunehmen, während das bei immutablen Datentypen nicht der Fall ist. Wenn sich der Wert einer Instanz aber nicht ändern kann, ergibt es auch keinen Sinn, mehrere immutable Instanzen des gleichen Wertes im Speicher zu verwalten, weil im Optimalfall genau eine Instanz ausreicht, auf die dann die entsprechenden Referenzen verweisen. 
+
+- ### Mutable Datentypen und Seiteneffekte
+Bei den mutablen, also den veränderlichen Datentypen sieht es anders aus: weil Python damit rechnen muss, dass sich der Wert einer solchen Instanz nachträglich ändern wird, ist das oben erläuterete System, nach Möglichkeit bereits vorhandene Instanzen erneut zu referenzieren, nicht sinnvoll. Hier kann man sich also darauf verlassen, dass immer eine neue Instanz erzeugt wird. Dieses unterschiedliche Verhalten beim Umgang mit mutablen und immutablen Datentypen führt dazu, dass der gleiche Code für verschiedene Datentypen fundamental anderes bewirken kann. 
+
+```py
+> a = "Wasser"
+> a += "flasche"
+> print(a)
+>>> Wasserflasche
+```
+
+Aber:
+```py
+> a = "Wasser"
+> b = a
+> a += "flasche"
+> print(a)
+>>> Wasserflasche
+> print(b)
+>>> Wasser
+```
+Dies liegt daran, dass ein String ein immutabler Datentyp ist.
+Eine Liste ist ein mutabler Datentyp, weshalb bei ihr folgendes Funktioniert:
+```py
+> a = [1,2]
+> b = a
+> a += [3, 4]
+> print(a)
+>>> [1,2,3,4]
+> print(b)
+>>> [1,2,3,4]
+```
+
+<a name="funktionen,-methoden-und-attribute"></a>
+
+## Funktionen, Methoden und Attribute
