@@ -466,7 +466,7 @@ Schleifen ermöglichen es einen Codeblock, den Schleifenkörper, mehrfach hinter
 
 - ### While-Schleifen
 
-Eine `while`-Schleife besteht asi einem Schleifenkopf, in welchem die Bedingung steht und einem Schleifenkörper, welcher den Codeblock enthält, welcher ausgeführt werden soll. Die `while`-Schleife läuft _solange_ eine Bedingung erfüllt ist und nicht _bis_ diese erfüllt ist. Eine Datei mit Beispielen findest du [hier](Kontrollstrukturen/Schleifen/while-Schleife.py)
+Eine `while`-Schleife besteht aus einem Schleifenkopf, in welchem die Bedingung steht und einem Schleifenkörper, welcher den Codeblock enthält, welcher ausgeführt werden soll. Die `while`-Schleife läuft _solange_ eine Bedingung erfüllt ist und nicht _bis_ diese erfüllt ist. Eine Datei mit Beispielen findest du [hier](Kontrollstrukturen/Schleifen/while-Schleife.py)
 
 ```py
 > while Bedingung:
