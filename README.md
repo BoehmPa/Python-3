@@ -597,7 +597,7 @@ Als nächstes wird die dateien-lesen.txt-Datei geöffnet und in einer Schleife �
   file_object.close
 ```
 
-Mit der Methode `split` um die aktuelle Zeile in zwei Teile aufzuteilen. Der Teil links des Leerzeichens (das englische Wort) und den Teil rechts vom Leerzeichen (das deutsche Wort). Als nächstes wird ein Eintrag ins dictionary angelegt, mit dem Schlüssel zuordnung[0] und dem Wert zuordnung[1].
+Mit der Methode `split` wird die aktuelle Zeile in zwei Teile aufgeteilt. Der Teil links des Leerzeichens (das englische Wort) und den Teil rechts vom Leerzeichen (das deutsche Wort). Als nächstes wird ein Eintrag ins dictionary angelegt, mit dem Schlüssel zuordnung[0] und dem Wert zuordnung[1].
 In der Beispiel-Datei [dateien-lesen.py](Dateien/dateien-lesen.py) ist eine Erweiterung dieses Programmes zu finden.
 
 
