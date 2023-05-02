@@ -1,6 +1,6 @@
 # Python-3
 
-Diese README dient dazu, alle wichtigen Dinge über das Thema **Python 3** einfach zu notieren.
+Ein Repo rund um die Grundlagen zum Thema Python.
 
 <br>
 <br>
