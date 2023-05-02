@@ -6,11 +6,12 @@ Ein Repo rund um die Grundlagen zum Thema Python.
 <br>
 
 # Inhaltsverzeichnis
-- [Eine Einführung in Python](#einführung)
+[Teil I: Die Basics](#teil-i-die-basics)
+  - [Eine Einführung in Python](#einführung)
     - [Grundlegende Konzepte](#grundlegende-konzepte) 
     - [Stärken](#stärken)
     - [Einsatzgebiete](#einsatzgebiete)
-- [Die Basics](#basics) 
+  - [Die Basics](#basics) 
     - [Grundlegende Datentypen](#grundlegende-datentypen)
     - [Operatoren](#operatoren)
     - [Ausgabe](#ausgabe)
@@ -19,20 +20,23 @@ Ein Repo rund um die Grundlagen zum Thema Python.
     - [Ausführen eines Python-Scripts in der Shell](#ausführen-eines-python-scripts-in-der-shell)
     - [Module](#module)
     - [Grundstruktur](#grundstruktur)
-- [Kontrollstrukturen](#kontrollstrukturen)
+  - [Kontrollstrukturen](#kontrollstrukturen)
     - [Fallunterscheidungen](#fallunterscheidungen)
     - [Schleifen](#schleifen)
     - [Die pass-Anweisung](#die-pass-anweisung)
-- [Dateien](#dateien)
+  - [Dateien](#dateien)
     - [Datenströme](#datenströme)
     - [Daten aus Dateien lesen](#daten-aus-einer-datei-lesen)
     - [Daten in Dateien schreiben](#daten-in-dateien-schreiben)
     - [Ein Dateiobjekt erzeugen](#ein-dateiobjekt-erzeugen)
-- [Das Laufzeitmodell](#das-laufzeitmodell)
+  - [Das Laufzeitmodell](#das-laufzeitmodell)
     - [Die Struktur von Instanzen](#die-struktur-von-instanzen)
     - [Referenzen und Instanzen freigeben](#referenzen-und-instanzen-freigeben)
     - [Mutable vs. immutable Datentypen](#mutable-vs-immutable-datentypen)
-- [Funktionen, Methoden und Attribute](#funktionen-methoden-und-attribute)
+  - [Funktionen, Methoden und Attribute](#funktionen-methoden-und-attribute)
+    - [Parameter von Funktioen und Methoden](#parameter-von-funktionen-und-methoden)
+    - [Attribute](#attribute)
+  - [Informationsquellen zu Python](#informationsquellen-zu-python)
 
   
 
@@ -43,7 +47,9 @@ Ein Repo rund um die Grundlagen zum Thema Python.
 
 
 
+<a name="teil-i:-die-basics"></a>
 
+# Teil I: Die Basics
 
 <a name="einführung"></a>
 
@@ -755,7 +761,7 @@ Während eines Programmablaufs werden in der Regel sehr viele Instanzen angelegt
 > v1 = 1337
 > del v1
 > v1
->>> Traceback (most recent call last): File "<stdin>", line 1, in <module> NameError: name 'v1' is not definded
+>> Traceback (most recent call last): File "<stdin>", line 1, in <module> NameError: name 'v1' is not definded
 > del v1, v2, v3
 ```
 Um zu erkennen, wann für eine Instanz keine Referenzen mehr existieren, speichert Python intern für jede Instanz einen Zähler, den sogenannten _Referenzzähler_ auch _reference count_. Für frisch erzeugte Instanzen hat er den Wert Null. Immer wenn eine neue Referenz auf eine Instanz erzeugt wird, erhöht sich der Referenzzähler der Instanz um eins, und immer wenn eine Referenz freigegeben wird, wurd er um eins verringert. Damit gibt der Referenzzähler einer Instanz stets die aktuelle Anzahl von Referenzen an, die auf die Instanz verweisen. Erreicht der Zähler den Wert Null, gibt es für die Instanz keine Referenzen mehr. Da Instanzen für Programmierer nur über Referenzen zugänglich sind, ist der Zugriff auf eine solche Instanz nicht mehr möglich - sie kann gelöscht werden.
@@ -772,7 +778,7 @@ Bei den mutablen, also den veränderlichen Datentypen sieht es anders aus: weil 
 > a = "Wasser"
 > a += "flasche"
 > print(a)
->>> Wasserflasche
+>> Wasserflasche
 ```
 
 Aber:
@@ -781,9 +787,9 @@ Aber:
 > b = a
 > a += "flasche"
 > print(a)
->>> Wasserflasche
+>> Wasserflasche
 > print(b)
->>> Wasser
+>> Wasser
 ```
 Dies liegt daran, dass ein String ein immutabler Datentyp ist.
 Eine Liste ist ein mutabler Datentyp, weshalb bei ihr folgendes Funktioniert:
@@ -792,11 +798,118 @@ Eine Liste ist ein mutabler Datentyp, weshalb bei ihr folgendes Funktioniert:
 > b = a
 > a += [3, 4]
 > print(a)
->>> [1,2,3,4]
+>> [1,2,3,4]
 > print(b)
->>> [1,2,3,4]
+>> [1,2,3,4]
 ```
 
 <a name="funktionen,-methoden-und-attribute"></a>
 
 ## Funktionen, Methoden und Attribute
+Dies ist erneut nur ein grober Einblick in die Thematik. Im späteren Verlauf wird genauer auf die einzelnen Themen eingegangen.
+
+<a name="parameter-von-funktionen-und-methoden"></a>
+
+### Parameter von Funktionen und Methoden
+Bei einer _Funktion_ handelt es sich um ein benanntes Unterprogramm, das eine häufig benötigte Funktionalität beinhaltet und über einen _Funktionsaufruf_ ausgeführt werden kann. Ein Beispiel einer solchen Funktion ist die eingebaute Funktion (auch Built-in Function) `max` zur Bestimmung des größten Elements einer Liste:
+```py
+> max([3,6,2,1,9])
+>> 9
+```
+Dabei ist die Liste, deren größtes Element bestimmt werden soll, ein Parameter fer Funktion `max` und wird beim Funktionsaufruf deshalb in die Klammern geschrieben.
+Wenn ein Funktionsaufruf ein Ergebnis zurückliefert, kann dieser Rückgabewert als Instanz weiterverwendet werden:
+```py
+> wert = max([3,6,2,4,9])
+> wert/2
+>>> 4,5
+```
+Eine Methode ist eine Funktion, die im Kontext einer bestimmten Instanz ausgeführt wird. Listen verfüge beispielsweise über eine Methode `sort`, die die Liste, für diesie aufgerufen wird, sortiert.
+```py
+> liste = [4,6,2,1,8,5,9]
+> liste.sort
+> liste
+>>> [1,2,4,5,6,8,9]
+```
+Welche Methoden für eine Instanz verfügbar sind, hängt von ihrem Datentyp ab. 
+
+- ### Positionsbezogene Parameter
+Viele Methoden, und Funktionen, benötigen beim Aufruf neben der Instanz, auf die sich der Aufruf bezieht, weitere Informationen, um zu funktionieren. Dafür gibt es sogenannte _Parameter_, die, durch Kommata getrennt, un die Klammern am Ende des Methodenaufrufs geschrieben werden. Als Parameter können sowohl Refernezen als auch Literale aufgegeben werden:
+```py
+> var = 12
+> referenz.methode(var, "Hallo Welt")
+```
+Wie viele und welche Parameter einer Methode übergeben werden dürfen, hängt von ihrer Definition ab und ist daher von Methode zu Methode verschieden. Eine Methode zusammen mit den Parametern, die sie erwartet, wird _Schnittstelle_ gennant.
+```py
+> methode(parameter1, parameter2, parameter3)
+```
+In diesem Fall erwartet die Methode drei positionsbezogene Parameter. Positionsbezogen bedeutet, dass die beim Methodenaufruf übergebenen Instanzen entsprechend ihrer Position in der Parameterliste den Parametern zugeordnet werden. 
+```py
+referenz.methode(1, 45, -7)
+```
+
+- ### Schlüsselwortparameter
+Es ist auch möglich, einer Methode _Schlüsselwortparameter (engl. keyword arguments)_ zu übergeben. Schlüsselwortparameter werden direkt mit dem formalen Parameternamen verknüpftm und ihre Reihenfolge in der Parameterliste spielt keine Rolle mehr,
+Um einen Wert als Schlüsselwortparameter zu übergeben, weist man den Parameternamen innerhalb des Methodenaufrufs den zu übergebenden Wert mithilfe des Gkeichheitszeichens zu. Die beiden folgenden Methodenaufrufe sind demnach gleichwertig:
+```py
+> referenz.methode(1, 2, 3)
+> referenz.methode(parameter2=2, parameter1=1, parameter3=3)
+```
+Allerdings können auch positions- und schlüsselwortbezogene Parameter gemischt werden, wobei allerdings alle Schlüsselwortparameter am Ende der Parameterliste stehen müssen. Damit ist der fildende Aufruf äquivalent zu den beiden vorangegangenen:
+```py
+> referenz.methode(1, parameter3=3, parameter2=2)
+```
+In der Regel werden Parameter postionsbezogen übergeben, weil der Schreibaufwand geringer ist.
+
+### Optionale Parameter
+Es gibt optionale Parameter, die nur bei Bedarf übergeben werden müssen. Methoden mit solchen Parametern werden durch eckige Klammern gekennzeichnet:
+```py
+> methode(parameter1, [parameter2, parameter3])
+```
+In diesem Beispiel ist also nur Parameter 1 erforderlich und Parameter 2 und Parameter 3 sind optional.
+
+### Reine Schlüsselwortparameter
+Eine Funktion oder Methode kann über reine Schlüsselwortparameter verfügen. Das sind Parameter, die ausschließlich in Schlüsselwortschreibweise übergeben werden können. Diese Parameter werden in einer Funktions- oder Methodenschnittstelle durch geschweifte Klammern gekennzeichnet:
+```py
+> methode(parameter1, parameter2, {parameter3})
+```
+Diese können optional oder nicht optional sein.
+
+<a name="attribute"></a>
+
+### Attribute
+Neben Methoden können Instanzen auch Attribute besitzen. Bei einem Attribut handelt es sich um eine Referenz, die mit einer Instanz verknüpft ist. Beispielsweise besitzt jede komplexe Zahl für den Zugriff auf ihren Real- bzw. Imaginärteil die Attribute `real` und `imag`.
+```py
+> zahl = 5 + 6j
+> zahl.real
+>> 5.0
+> zahl.imag
+>> 6.0
+```
+Da ein Ausdruck der Form referenz.attribut selbst wieder eine Referenz ist, lässt er sich wie jede andere Referenz verwenden. Er kann als Operand in einer Berechnung auftreten oder in eine Liste gespecihert werden:
+```py
+> zahl.real*zahl.real+5*zahl.imag
+>> 55.0
+> [1, zahl.imag, zahl.real]
+>> [1, 6.0, 5.0]
+```
+Insbesondere kann die Instanz, auf die referenz.attribut verweist, selbst ein Attribut `aaa` besitzen, auf das dann mixt referenz.attribut.aaa zugegriffen werden kann. Genauso funktioniert der Zugriff auf eine Methode der Instanz referenz.attribut.methode(parameter1, parameter2).
+Im nachfolgenden Beispiel zeigt das Attribut `real` einer komplexen Zahl auf eine Gleitkommazhal die ihrerseits eine Methode `is_integer` besitzt, um zu prüfen, ob es sich um eine ganze Zahl handel:
+```py
+> zahl.real.is_integer
+>> TRUE
+```
+Hier wurde also über zahl.real auf den Realteil 5.0 der komplexen Zahl 5+6j ,zugegriffen und anschließend die Methode is_integer von 5.0 aufgerufen.
+In Python-Programmen treten solche verschachtelten Attribut- und Methodenzugriffe häufig auf.
+
+<a name="informationsquellen-zu-python"></a>
+
+## Informationsquellen zu Python
+
+### Die Built-in Funkction help
+Um die interaktive Hilfefunktion zu starten, kann die eingebaute Funktion `help` aufgerufen werden. Mit `help()` wird ein Einleitungstext ausgegeben, gefolgt von einem Eingabeprompt. Hier können Begriffe nachgeschlagen werden. Mögliche Begriffe sind Schlüsselwörter wie `for`, Synbole wie `+`, Module `pprint` oder Themen `DEBUGGING`. Eine Lister der möglichen Suchbegriffe in den jeweiligen Kategorien lässt sich über die Befehle _keywords_, _symbols_, _modules_ und _topics_ anzeigen.
+
+### Die Onlinedokumentation
+Die Texte, die Pythons interaktive Hilfefunktion anzeigt, sind Auszüge aus der Doku. Die jeweils aktuellste Version findet man unter https://docs.python.org. Über eine Auswahlliste in der oberen linken Ecke lässt sich zur Dokumentation einer älteren Python-Version wechseln. 
+
+### PEPs
+Python Enhancement Proposals, kurz PEPs, sind kurze Ausarbeitungen, die ein Problem in der Sprache oder im Interpreter identifizieren, mögliche Lösungsansätze und die Diskussion darüber zusammenfassen und schließlich eine Lösung vorzuschlagen. Unter https://www.python.org/dev/peps findet man eine Liste aller vorgeschlagenen PEPs. Jedoch kann ein PEP mitunter sehr technisch ausfallen, was dazuführt, dass selbst erfahrene Python-Entwickler dieses nur schwer verstehen.
