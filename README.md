@@ -38,6 +38,10 @@ Ein Repo rund um die Grundlagen zum Thema Python.
     - [Attribute](#attribute)
   - [Informationsquellen zu Python](#informationsquellen-zu-python)
 
+[Teil II: Datentypen](#teil-ii-datentypen)
+  - [Basisdatentypen: Eine Übersicht](#basisdatentypen-eine-übersicht)
+  - [Numerische Datentypen](#numerische-datentypen)
+
   
 
 
@@ -909,7 +913,129 @@ In Python-Programmen treten solche verschachtelten Attribut- und Methodenzugriff
 Um die interaktive Hilfefunktion zu starten, kann die eingebaute Funktion `help` aufgerufen werden. Mit `help()` wird ein Einleitungstext ausgegeben, gefolgt von einem Eingabeprompt. Hier können Begriffe nachgeschlagen werden. Mögliche Begriffe sind Schlüsselwörter wie `for`, Synbole wie `+`, Module `pprint` oder Themen `DEBUGGING`. Eine Lister der möglichen Suchbegriffe in den jeweiligen Kategorien lässt sich über die Befehle _keywords_, _symbols_, _modules_ und _topics_ anzeigen.
 
 ### Die Onlinedokumentation
-Die Texte, die Pythons interaktive Hilfefunktion anzeigt, sind Auszüge aus der Doku. Die jeweils aktuellste Version findet man unter https://docs.python.org. Über eine Auswahlliste in der oberen linken Ecke lässt sich zur Dokumentation einer älteren Python-Version wechseln. 
+Die Texte, die Pythons interaktive Hilfefunktion anzeigt, sind Auszüge aus der Doku. Die jeweils aktuellste Version findet man unter https://docs.python.org. Über eine Auswahlliste in der oberen linken Ecke lässt sich zur Dokumentation einer älteren Python-Version wechseln.
 
 ### PEPs
 Python Enhancement Proposals, kurz PEPs, sind kurze Ausarbeitungen, die ein Problem in der Sprache oder im Interpreter identifizieren, mögliche Lösungsansätze und die Diskussion darüber zusammenfassen und schließlich eine Lösung vorzuschlagen. Unter https://www.python.org/dev/peps findet man eine Liste aller vorgeschlagenen PEPs. Jedoch kann ein PEP mitunter sehr technisch ausfallen, was dazuführt, dass selbst erfahrene Python-Entwickler dieses nur schwer verstehen.
+
+
+<a name="teil-ii:-datentypen"></a>
+
+# Teil II: Datentypen
+
+<a name="basisdatentypen:-eine-übersicht"></a>
+
+## Basisdatentypen: eine Übersicht
+| Datentyp  | speichert | Veränderlichkeit |
+|----------|----------|----------|
+|  NoneType | das Nichts | unerveränderlich |
+|  *_Numerische Datentypen_*  |
+|  int | ganze Zahlen | unerveränderlich |
+| float  | Gleitkommazahlen  | unveränderlich  |
+|bool  |boolesche Werte  |  unveränderlich|
+|complex  | komplexe Zahlen |  unveränderlich|
+|  Sequenzielle Datentypen |
+| list | Listen  | veränderlich  |
+| tuple  | Listen  | unveränderlich  |
+| str | Text | unveränderlich  |
+| bytes | Binärdaten als Sequenz von Bytes  | unveränderlich  |
+| bytearray | Binärdaten als Sequenz von Bytes  | veränderlich  |
+| *_Zuordnungen und Mengen_*  |
+| dict | Schlüssel-Wert-Zuordnungen  | veränderlich  |
+| set | Mengen beliebiger Instanzen | veränderlich  |
+| frozenset  | Mengen beliebiger Instanzen  | unveränderlich  |
+
+### Das Nichts - NoneType
+
+Es gibt nur eine einzige Instanz des _"Nichts"_, das _None_. Das ist eine Konstante, die jederzeit im Quelltext verwendet werden kann.
+```py
+> ref = NONE
+> ref
+> print(ref)
+>> NONE
+```
+Man kann None verwenden, um zu überprüfen, ob eine Referenz auf nichts verweist:
+```py
+> if ref is None:
+>  print("ref is None")
+>> ref is None
+```
+Wichtig: mit dem Schlüsselwort _is_ wird überprüft, ob die von `ref` referenzierte Instanz mit `None` identisch ist. Dies kann auch mit dem Operator `==` erfolgen, wobei diese Operationen, nur in diesem Beispiel und auch nur in diesem Fall, vordergründig äquivalent sind, denn mit `==` werden zwei Werte und mit `is` zwei Identitäten auf Gleichheit überprüft.
+
+### Operatoren
+In Python hängt die Bedeutung eines Operators davon ab, auf welchen Datentypen er angewendet wird. In Python haben Operatoren, wie auch in der Mathematik, eine Bindigkeit. Diese ist so definiert, dass `*` stärker bindet als `+`. Es gilt also: _Punkt vor Strich_. Zudem gibt es eine Operatorenrangfolge, die definiert, welcher Operator wie stark bindet und auf diese Weise einem klammerlosen Ausdruck eine eindeutige Auswertungsreihenfolge und damit einen eindeutigen Wert zuweist.
+
+|Operator  | Übliche Bedeutung |
+|------|------|
+| x**y |  y-te Potenz von x  |
+|+x  | positives Vorzeichen  |
+|-x  |negatives Vorzeichen  |  
+| ~x | bitweises Komplement von x  |   
+| x*y | Produkt von x und y  |  
+| x/y | Quotient von x und y  |  
+| x%y | Rest bei ganzzahliger Division von x durch y  |  
+| x//y | ganzzahlige Division von x durch y  |  
+| x@y | Matrizenmultiplikation von x und y  |     
+| x+y | Addition von x und y  |  
+| x-y | Subtraktion von x und y  |  
+| x>>n | bitweise Verschiebung um n Stellen nach rechts  |  
+| x<<n | bitweise Verschiebung um n Stellen nach links  |  
+| x&y | bitweises UND zwischen x und y  |  
+| x^y | bitweises ausschließendes ODER zwischen x und y |  
+| x|y | bitweises nicht ausschließendes ODER zwischen x und y |  
+|x<y  | ist x kleiner y? |  
+|x>y  | ist x größer y? |  
+| x<=y | ist x kleiner oder gleich y? |  
+| x>=y | ist x größer oder gleich y? |  
+| x!=y  |ist x ungleich y?  |  
+| x==y | ist x gleich y? |  
+| x is y | sind x und y identisch? |  
+| x is not y | sind x und y nicht identisch? |  
+| x in y | befindet sich x in y? |  
+| x not in y | befindet sich x nicht in y? |  
+| not x | logische Negierungs |  
+| x and y | logisches UND  |  
+| x or y | logisches ODER |  
+
+Eine weiter Regel von Python: Ausdrücke oder Teilausdrücke, die nur aus Operatoren gleicher Bindigkeit bestehen, werden von _links nach rechts_ ausgewertet.
+```py
+> 6-2-3
+>> 1
+```
+<a name="numerische-datentypen"></a>
+
+## Numerische Datentypen
+| Datentyp  | speichert | Veränderlichkeit |
+|----------|----------|----------|
+|  int | ganze Zahlen | unerveränderlich |
+| float  | Gleitkommazahlen  | unveränderlich  |
+|bool  |boolesche Werte  |  unveränderlich|
+|complex  | komplexe Zahlen |  unveränderlich|
+
+Alle numerischen Datentypen sind unveränderlich!
+
+### Arithmetische Operatoren
+Zu den bereits aufgezeigten arithemtischen Operatoren gibt es in Python die Möglichkeit, diese verkürzt Darzustellen.
+| Operator  | Entsprechung|
+|----------|----------|
+| x+=y | x=x+y  |
+| x-=y | x=x-y |
+| x*=y | x= x*y  |
+| x/=y | x=x/y |
+| x%=y | x=x%y  |
+| x**=y | x=x**y |
+| x//=y | x=x//y |
+
+### Vergleichende Operatoren
+| Vergleich               |            Bedeutung   |
+| ------------------------| ---------------------- |
+| ==                      | ist gleich/das Selbe   |
+| !=                      | ist ungleich           |
+| <                       | ist kleiner            |
+| >                       | ist größer             |
+| <=                      | ist kleiner oder gleich|
+| >=                      | ist größer oder gleich |
+
+Da komplexe Zahlen prinzipiell nicht sinnvoll anzuordnen sind, lässt der Datentyp `complex`nur die Verwendung der ersten beiden Operatoren zu.
+
+### Konvertierung zwischen numerischen Datentypen
