@@ -41,6 +41,7 @@ Ein Repo rund um die Grundlagen zum Thema Python.
 [Teil II: Datentypen](#teil-ii-datentypen)
   - [Basisdatentypen: Eine Übersicht](#basisdatentypen-eine-übersicht)
   - [Numerische Datentypen](#numerische-datentypen)
+  - [Ganzzahl - int](#ganzzahlen---int)
 
   
 
@@ -1039,3 +1040,37 @@ Zu den bereits aufgezeigten arithemtischen Operatoren gibt es in Python die Mög
 Da komplexe Zahlen prinzipiell nicht sinnvoll anzuordnen sind, lässt der Datentyp `complex`nur die Verwendung der ersten beiden Operatoren zu.
 
 ### Konvertierung zwischen numerischen Datentypen
+
+Numerische Datentypen können über die eingebauten Funktionen `float`, `int`, `bool` und `complex` ineinander umgeformt werden. Dabei können je nach Umformung Informationen verloren gehen. 
+```py
+> float(33)
+>> 33
+> int(33.5)
+>> 33
+> bool(12)
+>> True
+> complex(True)
+>>(1+0j)
+```
+Anstelle eines konkreten Literals kann auch eine Referenz eingesetzt bzw. eine Referenz mit dem entstehenden Wert verknüpft werden:
+```py
+> var1 = 12.5
+> int(var1)
+>> 12
+> var2 = int(40.25)
+> var2
+>> 40
+```
+
+<a name = "ganzzahlen-int"></a>
+
+## Ganzzahlen - int
+Für den Raum der ganzen Zahlen gibt es in Python den Datentyp `int`. Im Gegensatz zu vielen anderen Programmiersprachen unterliegt dieser Datentyp in seinem Wertebereich keine prinzipiellen Grenzen, was den Umgang mit großen Zahlen in Python erleichtert. Seit Python 3.6 kann ein Unterstrich verwendet werden, um die Ziffern eines Literals zu gruppieren:
+
+```py
+> 1_000_000
+>> 1000000
+> 1_0_0
+>> 100
+```
+Die Gruppierung ändert nichts am Zahlenwert des Literals, sondern dient dazu, die Lesbarkeit von Zahlenliteralen zu erhöhen.
