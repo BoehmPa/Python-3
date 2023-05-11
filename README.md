@@ -1037,7 +1037,7 @@ Zu den bereits aufgezeigten arithemtischen Operatoren gibt es in Python die Mög
 | <=                      | ist kleiner oder gleich|
 | >=                      | ist größer oder gleich |
 
-Da komplexe Zahlen prinzipiell nicht sinnvoll anzuordnen sind, lässt der Datentyp `complex`nur die Verwendung der ersten beiden Operatoren zu.
+Da komplexe Zahlen prinzipiell nicht sinnvoll anzuordnen sind, lässt der Datentyp `complex` nur die Verwendung der ersten beiden Operatoren zu.
 
 ### Konvertierung zwischen numerischen Datentypen
 
