@@ -43,6 +43,9 @@ Ein Repo rund um die Grundlagen zum Thema Python.
   - [Numerische Datentypen](#numerische-datentypen)
   - [Ganzzahl - int](#ganzzahlen---int)
 
+[Teil III: Fortgeschrittene Programmiertechniken](#teil-iii-fortgeschrittene-programmiertechniken)
+  - [Funktionen](#funktionen)
+
   
 
 
@@ -1074,3 +1077,54 @@ Für den Raum der ganzen Zahlen gibt es in Python den Datentyp `int`. Im Gegensa
 >> 100
 ```
 Die Gruppierung ändert nichts am Zahlenwert des Literals, sondern dient dazu, die Lesbarkeit von Zahlenliteralen zu erhöhen.
+
+### Zahlensysteme
+In Python können ganze Zahlen in mehreren Zahlensystemen geschrieben werden:
+
+Das Dezimalsystem:
+```py
+> v_dez = 1337
+```
+
+Das Oktalsystem:
+```py
+> v_okt = 0o2471
+```
+Der Präfix 0o (Null o) kennzeichnet eine Zahl im Oktalsystem. Erlaubt sind hier nur die Ziffern von 0 bis 7.
+
+Das Hexadezimalsystem:
+```py
+> v_hex = 0x5A3F
+```
+Das Hexadezimalsystem hat den Präfix 0x (Null x). Die Zahl darf aus den Ziffern 0-9 und den Buchstaben A-F gebildet werden.
+
+Das Binärsystem/Dualsystem:
+```py
+> v_bin = 0b1101
+```
+Im Dualsystem dürfen nur die Zahlen 0 und 1 benutzt werden.
+
+Generell unterstützt Python die Zahlensysteme mit einer Basis von 2 bis 36. Wenn ein Zahlensystem mehr als zehn verschiedene Ziffern zur Darstellung einer Zahl benötigt, werden zusätzlich zu den Ziffern 0 bis 9 die Buchstaben A bis Z des englischen Alphabets verwendet.
+
+
+
+<a name= "teil-iii:-fortgeschrittene-programmiertechniken"></a>
+
+# Teil III: Fortgeschrittene Programmiertechniken
+
+<a name= "Funktionen"></a>
+
+## Funktionen
+Eine Funktion besteht aus einem _Funktionsnamen_, einer Liste von _Funktionsparametern_ und einem Codeblock, dem _Funktionskörper_.
+Bei einem Funktionsaufruf wird dann der Funktionskörper unter Berücksichtigung der übergebenen Argumente ausgeführt. Eine Funktion in Python kann einen Rückgabewert haben oder nicht. Funktionen werden in der Programmierung eingesetzt, um Redundanzen um Quellcode zu vermeiden. Das bedeutet, dass Codestücke, die in der gleichen oder einer ähnlichen Form öfter im Programm benötigt werden, nicht jedes Mal neu geschrieben werden müssen, sondern in einer Funktion gekapselt werden. Diese Funktion kann dann an den Stellen, an denen sie benötigt wird, aufgerufen werden. Darüber hinaus bilden Funktionen ein elegantes Hilfsmittel, um einen langen Quellcode sinnvoll in Unterprogramme aufzuteilen. Das erhöht die Les- und Wartbarkeit des Codes.
+
+### Schreiben einer Funktion
+Eine Funktion muss einen Namen haben, über den sie in anderen Teilen des Programmes aufgerufen werden kann. Die Zusammensetzung des Funktionsnamens erfolgt nach denselben Regeln wie die Namensgebung einer Referenz. 
+Eine Funktion muss eine Schnittstelle haben, über die Informationen vom aufrufenden Programmteil in den Kontext der Funktion übertragen werden. Eine Schnittstelle kann aus beliebig vielen (unter Umständen auch keinen) Paramtern bestehen. Funktionsintern wird jedem dieser Parameter ein Name gegeben. Diese lassen sich dann wie Referenzen im Funktionskörper verwenden.
+
+Um eine Funktion in Python zu definieren, wird das Schlüsselwort _def_ verwendet. 
+```py
+> def Funktionsname(parameter_1, ... parameter_n):
+      Anweisung
+```
+Nach dem Schlüsselwort `def` steht der gewählte Funktionsname. Dahinter werden in einem Klammernpaar die Namen aller Parameter aufgelistet. Nach der Definition der schnittstelle folgen ein Doppelpunkt und eine Stufe weiter eingerückt, der Funktionskörper. Beim Funktionskörper handelt es sich um einen Codeblock, in dem die Parameternamenals Referenzen verwendet werden dürfen. Im Funktionskörper dürfen auch wieder Funktionen aufgerufen werden.
