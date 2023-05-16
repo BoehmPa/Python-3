@@ -1,4 +1,4 @@
-geheimnis = 1337
+geheimnis = 1234 
 versuch = -1
 zaehler = 0
 
