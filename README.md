@@ -429,7 +429,7 @@ Eine Beispiel-Datei, mit einer kompletten `if`-Anweisung findest du [hier](Kontr
 
 > if x < 1 or x > 5:
     print("x ist kleiner 1")
-    print("oder größer 5)
+    print("oder größer 5")
 ```
 
 
